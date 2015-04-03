@@ -170,15 +170,10 @@ DEFAULT_SENDER = 'duxo@duxomusic.com'
 #
 #############################################################
 
-if sys.argv[1] == 'test':
-    CMS_TEMPLATES = (
-        ('testing.html', 'Default Page'),
-    )
-else:
-    CMS_TEMPLATES = (
-        ('main.html', 'Main Content Container'),
-        ('wrapped.html', 'Wrapped Bootstrap Column'),
-    )
+CMS_TEMPLATES = (
+    ('main.html', 'Main Content Container'),
+    ('wrapped.html', 'Wrapped Bootstrap Column'),
+)
 
 CMS_SEO_FIELDS = True
 

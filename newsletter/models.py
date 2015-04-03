@@ -5,15 +5,15 @@ import datetime
 
 class Person(models.Model):
     """A person in the mailing list (a subscriber)"""
-    
+
     email = models.EmailField(max_length=254, unique=True)
     nom = models.CharField(max_length=255)
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)
     date_desinscription = models.DateTimeField(blank=True, null=True)
-    
+
     def __unicode__(self):
-        return '{0} : {1}'.format(self.nom,self.email)
+        return '{0} : {1}'.format(self.nom, self.email)
 
 
 class List(models.Model):
@@ -23,9 +23,9 @@ class List(models.Model):
     description = models.TextField(blank=True)
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)
-    
+
     subscribers = models.ManyToManyField(Person, blank=True)
-    
+
     def __unicode__(self):
         return self.nom
 
@@ -37,22 +37,29 @@ class Mail(models.Model):
     corps = models.TextField()
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)
-    date_envoi = models.DateTimeField(default=datetime.datetime.now())
+    date_envoi = models.DateTimeField(default=datetime.datetime.now)
     draft = models.BooleanField(default=True)
+    sent = models.BooleanField(default=False)
 
     list = models.ForeignKey(List, related_name='mails')
     recipients = models.ManyToManyField(Person, related_name='received_mails', blank=True)
     readers = models.ManyToManyField(Person, related_name='read_mails', blank=True)
 
     def __unicode__(self):
-        return '"{0}" - Sent to {2} persons ({1})'.format(self.sujet,self.date_creation, len(self.recipients.all()))
+        definition = str()
+        if self.sent:
+            definition = '"{0}" - Sent to {1} persons (around {2})'
+        else:
+            definition = '"{0}"'
+        return definition.format(self.sujet, len(self.recipients.all()),
+                                 self.date_creation.strftime('hh:MM the dd/mm/YYYY'))
 
 
 class Link(models.Model):
     """A link in a mail we wish to track"""
 
     url = models.URLField()
-    
+
     mail = models.ForeignKey(Mail, related_name='links')
     clickers = models.ManyToManyField(Person, blank=True)
 
