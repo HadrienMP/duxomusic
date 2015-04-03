@@ -1,0 +1,28 @@
+/* line 1, ../sass/nm_msgs.scss */
+ul.success {
+  color: green;
+  position: relative;
+}
+/* line 5, ../sass/nm_msgs.scss */
+ul.success li {
+  margin-left: 2em;
+  text-align: justify;
+}
+/* line 9, ../sass/nm_msgs.scss */
+ul.success li:before {
+  content: '\F14A';
+  position: absolute;
+  left: 0;
+  font-family: FontAwesome;
+}
+
+/* line 18, ../sass/nm_msgs.scss */
+ul.error, ul.errorlist {
+  color: red;
+  margin-top: 5px;
+  margin-bottom: -5px;
+}
+/* line 21, ../sass/nm_msgs.scss */
+p ~ ul.error, p ~ ul.errorlist {
+  margin-top: 17px;
+}

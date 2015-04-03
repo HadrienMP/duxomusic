@@ -1,0 +1,7 @@
+{% for level, messages in categories.items %}
+<ul class="{{ level }}">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endfor %}

@@ -1,0 +1,32 @@
+<section class="block newsletter">
+
+    {% load nm_msgs_tags %}
+    {% success_nm_msgs "newsletter" as messages %}
+    {% if messages %}
+
+    <div class="success_message">
+        <p class="icon"><i class="fa fa-check-circle-o"></i></p>
+        <p><strong>{{ messages.0 }}</strong></p>
+        <p>
+            Il ne te reste plus qu'à la confirmer en cliquant
+            sur le lien dans l'email que je t'ai envoyé.
+        </p>
+        <p>Si tu ne l'a pas reçu, écris-moi j'arrangerais ça.</p>
+        <p>A tout de suite !</p>
+    </div>
+
+    {% else %}
+
+    {% if instance.call_to_action %}
+        <p class="call-to-action">{{ instance.call_to_action }}</p>
+    {% endif %}
+
+    <form class="ajax" action="/newsletter/subscribe" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="type" value="newsletter" />
+        {{ form.as_p }}
+        <button type="submit">Inscription</button>
+    </form>
+
+    {% endif %}
+</section>

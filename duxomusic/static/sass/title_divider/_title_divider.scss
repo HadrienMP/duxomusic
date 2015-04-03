@@ -1,0 +1,16 @@
+h1.title-divider {
+  font-family: "Cinzel Decorative", cursive;
+  font-size: 1.4em;
+  text-align: center;
+  @include text-shadow(rgba(255,255,255,0.7) 0 0 5px);
+
+  &:before, &:after {
+    content: "";
+    display: block;
+    width: 10%;
+    max-width: 40px;
+    border-bottom: 1px solid #ffffff;
+    margin: 20px auto;
+    @include box-shadow(rgba(255,255,255,0.7) 0 0 5px);
+  }
+}

@@ -1,0 +1,88 @@
+{% load cms_tags staticfiles sekizai_tags cache menu_tags %}
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<title>{% block title %}Page Title{% endblock %} - Dux'O music</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ STATIC_URL }}img/favicon/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ STATIC_URL }}img/favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}img/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ STATIC_URL }}img/favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}img/favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ STATIC_URL }}img/favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ STATIC_URL }}img/favicon/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ STATIC_URL }}img/favicon/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ STATIC_URL }}img/favicon/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="{{ STATIC_URL }}img/favicon/android-chrome-manifest.json">
+        <meta name="msapplication-TileColor" content="#000000">
+        <meta name="msapplication-TileImage" content="{{ STATIC_URL }}img/favicon/mstile-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+		<meta name="description" content="{% block meta-description %}{% endblock %}" />
+
+        <link href="{{ STATIC_URL }}css/font-awesome/font-awesome.css" rel="stylesheet"/>
+        <link href='http://fonts.googleapis.com/css?family=Righteous|Cinzel+Decorative:400,700,900|Mountains+of+Christmas:400,700|Griffy|Mystery+Quest|Spirax|Uncial+Antiqua'
+              rel='stylesheet' type='text/css'/>
+        <link href='http://fonts.googleapis.com/css?family=Poiret+One|Lobster+Two|Aclonica|Mystery+Quest|Jolly+Lodger' rel='stylesheet' type='text/css'>
+        <link href="{{ STATIC_URL }}css/colorpicker.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}js/jquery-ui-1.11.2.custom/jquery-ui.min.css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}js/slidebars/slidebars.min.css"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/dist/css/bootstrap.css" type="text/css" media="screen" />
+        <!--<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" type="text/css" media="screen" />-->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+        <link href="{{ STATIC_URL }}css/screen.css" rel="stylesheet" type="text/css"/>
+
+		{% render_block "css" %}
+
+        <style>
+            body, #sb-site {
+                background: url({{ STATIC_URL }}img/sunset.jpg) no-repeat center top / 100% auto black fixed;
+            }
+        </style>
+	</head>
+
+
+<body class="preload">
+	{% cms_toolbar %}
+    <div id="sb-site">
+        <div id="wrapper">
+            <header>
+                <h1>
+                    <a href="/" title="Accueil"><img src="{{ STATIC_URL }}img/big-logo.png" alt="Dux'O music"/></a>
+                </h1>
+                <a href="#" title="Menu" class="sb-toggle-right"><i class="fa fa-bars">&nbsp;</i></a>
+                <!--<nav>-->
+                    <!--<ul>-->
+                        <!--{% show_menu 0 100 100 100 "menu.html" %}-->
+                    <!--</ul>-->
+                <!--</nav>-->
+            </header>
+            <article id="wrap" {% if framework == 'angular_bootstrap3' %}ng-app="myApp"{% endif %}>
+                {% block sections %}{% endblock %}
+            </article>
+        </div>
+    </div>
+    <!--<div class="sb-slidebar sb-right">-->
+        <!--<ul>-->
+            <!--{% show_menu 0 100 100 100 "menu-side.html" %}-->
+        <!--</ul>-->
+    <!--</div>-->
+
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js" ></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/colorpicker.js" ></script>
+    <script src="{{ STATIC_URL }}js/jquery-ui-1.11.2.custom/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/slidebars/slidebars.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/global.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	{% render_block "js" %}
+</body>
+
+</html>

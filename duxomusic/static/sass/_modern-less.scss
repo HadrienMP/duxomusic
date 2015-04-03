@@ -1,0 +1,195 @@
+$color: white;
+$font: "Poiret One";
+
+html, body, #sb-site {height: 100%;}
+
+body {
+
+  color: $color;
+  font-family: $font, Arial, sans-serif;
+  font-weight: bold;
+
+  #wrapper {
+    position: relative;
+    padding-bottom: 100px;
+  }
+
+  header {
+    text-align: center;
+
+    h1, nav {
+      display: inline-block;
+      vertical-align: top;
+    }
+    h1 {
+      margin: 100px 0;
+      max-width: 100%;
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        img {
+            max-width: 100%;
+        }
+      }
+    }
+
+    & > a {
+      display: none;
+
+      @include respond-to(little-screens) {
+        display: inline-block;
+        font-size: 2em;
+        padding: 55px 20px;
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    nav {
+      position: absolute;
+      right: 0;
+      top: -5px;
+      text-align: right;
+      width: 81%;
+
+      @include respond-to(little-screens) {
+        width: 100%;
+        background: black;
+        display: none;
+      }
+
+      li {
+        display: inline-block;
+
+        &:hover:nth-child(odd) a {
+          background: url(../img/el1.png) 40% 2px no-repeat;
+          background-size: 94px auto;
+        }
+        &:hover:nth-child(even) a {
+          background: url(../img/el2.png) 40% 8px no-repeat;
+          background-size: 89px auto;
+        }
+
+        &:first-child a {
+          padding-left: 45px;
+          background-position: right center;
+          background-size: 120px auto;
+        }
+        &:first-child:hover a, &:first-child a.active {
+          background: url(../img/first-menu-el3.png) 0px 15px no-repeat;
+          background-size: 120px auto;
+        }
+        &:last-child a {
+          padding-right: 45px;
+          background-position: left center;
+        }
+        &:last-child:hover a, &:last-child a.active {
+          background: url(../img/last-menu-el2.png) no-repeat right 15px;
+          background-size: 120px auto;
+        }
+
+        a {
+          display: block;
+          padding: 50px 0px 50px;
+          background-position: center center;
+          background: url(../img/placeholder.png);
+          @include transition-property(background);
+          @include transition-duration(.3s);
+
+          span {
+            color: #aaa;
+            padding: 16px 25px 15px;
+            min-width: 55px;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.2em;
+            font-weight: bold;
+            @include transition-property(color);
+            @include transition-duration(.3s);
+
+            @include respond-to(little-screens) {
+              font-size: .8em;
+              min-width: 0px;
+              padding: 16px 15px 15px;
+            }
+          }
+
+          &:hover span, &.active span {
+            color: white;
+            text-shadow: 0px 0px 10px white;
+          }
+        }
+      }
+    }
+  }
+  #wrap {
+    margin: 0px auto;
+    max-width: 1700px;
+
+    @include respond-to(little-screens, handhelds) {
+        // Override the bootstrap theme (not fit for my theme)
+        .container-fluid {
+            padding: 4px;
+        }
+        .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2,
+        .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3,
+        .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4,
+        .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5,
+        .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7,
+        .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8,
+        .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9,
+        .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10,
+        .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12,
+        .col-sm-12, .col-md-12, .col-lg-12 { padding-left: 8px; padding-right: 8px; }
+    }
+
+  }
+
+  #sb-site {
+    box-shadow: 3px 0px 18px black;
+    overflow: auto;
+  }
+  .sb-slidebar {
+    li a {
+      padding: 20px 15px 20px 15px;
+      display: block;
+      text-transform: uppercase;
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 1.2em;
+      font-weight: bold;
+      @include transition-property(color, text-shadow, padding-left);
+      @include transition-duration(.3s);
+      color: #aaa;
+      border-bottom: 1px solid #333;
+
+      &:hover, &.active {
+        padding-left: 40px;
+        color: white;
+        background: url(../img/skull.png) no-repeat 12px center / 15px auto;
+        text-shadow: 0px 0px 10px white;
+      }
+    }
+  }
+
+}
+
+a, a:hover, a:visited, a:focus {
+  color: $color;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+section.block {
+  background: $black-back;
+  //background: #F5F5F5;
+  @include border-radius(3px);
+}
+
+@import "contact/contact";
+@import "newsletter/newsletter";
+@import "title_divider/title_divider";
