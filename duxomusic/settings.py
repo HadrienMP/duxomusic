@@ -151,6 +151,7 @@ LANGUAGES = (
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'  # class to serialize session data
+SESSION_ENGINE = django.contrib.sessions.backends.db
 
 #############################################################
 #
