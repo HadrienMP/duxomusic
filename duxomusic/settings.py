@@ -23,7 +23,7 @@ import django
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'duxomusic.db',
+        'NAME': os.environ.get('DATABASE_NAME', 'duxomusic.db'),
     },
 }
 
