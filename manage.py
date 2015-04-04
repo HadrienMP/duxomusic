@@ -7,7 +7,7 @@ from django.core.management import execute_from_command_line
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "duxomusic.settings")
 
-    env_dir = 'env/dev'
+    env_dir = 'env'
     env_vars = glob.glob(os.path.join(env_dir, '*'))
     for env_var in env_vars:
         with open(env_var, 'r') as env_var_file:
