@@ -42,4 +42,4 @@ def read(request):
             mail.save()
 
     image_data = open(_NEWSLETTER_DIR + "/static/img/placeholder.png", "rb").read()
-    return HttpResponse(image_data, mimetype="image/png")
+    return HttpResponse(image_data, content_type="image/png")
