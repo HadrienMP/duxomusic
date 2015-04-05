@@ -1,7 +1,6 @@
 # -*- coding:utf-8 -*-
 # Django settings for unit test project.
 import os
-import sys
 
 DEBUG = bool(os.environ.get('DEBUG', False))
 
@@ -146,12 +145,11 @@ USE_TZ = True
 
 LANGUAGE_CODE = 'fr'
 LANGUAGES = (
-    # ('en-us', 'English'),
     ('fr', 'French'),
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'  # class to serialize session data
-SESSION_ENGINE = django.contrib.sessions.backends.db
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 #############################################################
 #

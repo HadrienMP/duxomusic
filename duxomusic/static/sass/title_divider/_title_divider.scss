@@ -2,7 +2,7 @@ h1.title-divider {
   font-family: "Cinzel Decorative", cursive;
   font-size: 1.4em;
   text-align: center;
-  @include text-shadow(rgba(255,255,255,0.7) 0 0 5px);
+  @include text-shadow(rgba(255,255,255,0.7) 0 0 5px, rgba(0,0,0,0.85) 2px 2px 2px);
 
   &:before, &:after {
     content: "";

@@ -1,6 +1,5 @@
 __author__ = 'hadrien'
 from django import template
-import json, re
 
 
 register = template.Library()
@@ -8,7 +7,6 @@ register = template.Library()
 
 @register.assignment_tag(takes_context=True)
 def nm_msgs(context, namespace=None):
-    print 'toto'
     return __get_nm_msgs(context, namespace=namespace).get('categories', None)
 
 
