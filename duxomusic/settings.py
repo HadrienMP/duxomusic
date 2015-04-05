@@ -10,6 +10,8 @@ SITE_ID = 1
 
 ROOT_URLCONF = 'duxomusic.urls'
 
+BASE_URL = os.environ['BASE_URL']
+
 SECRET_KEY = os.urandom(24).encode("hex")
 
 ALLOWED_HOSTS = [

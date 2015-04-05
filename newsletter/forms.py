@@ -1,4 +1,5 @@
-from django.forms import ModelForm, TextInput, EmailInput
+from django.forms import ModelForm, TextInput, EmailInput, Form, IntegerField
+
 from .models import Person
 
 
@@ -11,3 +12,7 @@ class NewsletterForm(ModelForm):
             'nom': TextInput(attrs={'placeholder': 'Nom', 'required' : True})
         }
 
+
+class ReadForm(Form):
+    person_id = IntegerField()
+    mail_id = IntegerField()
