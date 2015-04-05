@@ -14,7 +14,7 @@ def subscribe(request):
             person.lists = List.objects.all()
             person.save()
             nm_msgs.success(request,
-                            message=u"Merci pour ton inscription " + form.cleaned_data['nom'] + " !",
+                            message=u"Merci pour ton inscription " + person.nom + " !",
                             namespace="newsletter")
 
         else:
