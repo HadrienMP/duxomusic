@@ -224,15 +224,6 @@ COLUMN_GLOSSARY = {
     },
 }
 
-CMS_PLACEHOLDER_CONF = {
-    'Bootstrap Column': {
-        'plugins': ['BootstrapRowPlugin', 'TextPlugin'],
-        'parent_classes': {'BootstrapRowPlugin': []},
-        'require_parent': False,
-        'glossary': COLUMN_GLOSSARY,
-    },
-}
-
 CKEDITOR_SETTINGS = {
     'language': '{{ language }}',
     'skin': 'moono',
