@@ -43,7 +43,6 @@ class Mail(models.Model):
     sent = models.BooleanField(default=False)
 
     list = models.ForeignKey(List, related_name='mails')
-    recipients = models.ManyToManyField(Person, related_name='received_mails', blank=True)
     readers = models.ManyToManyField(Person, related_name='read_mails', blank=True)
 
     def __unicode__(self):
