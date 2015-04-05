@@ -34,8 +34,8 @@ def read(request):
     form = ReadForm(request.GET)
     if form.is_valid():
 
-        mail = Mail.objects.get(pk=form.cleaned_data('mail_id'))
-        person = Person.objects.get(pk=form.cleaned_data('person_id'))
+        mail = Mail.objects.get(pk=form.cleaned_data['mail_id'])
+        person = Person.objects.get(pk=form.cleaned_data['person_id'])
 
         if mail and person:
             mail.readers.add(person)
