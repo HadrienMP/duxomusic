@@ -1,6 +1,7 @@
+import datetime
+
 from django.db import models
 from cms.models.pluginmodel import CMSPlugin
-import datetime
 
 
 class Person(models.Model):
@@ -24,7 +25,7 @@ class List(models.Model):
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)
 
-    subscribers = models.ManyToManyField(Person, blank=True)
+    subscribers = models.ManyToManyField(Person, blank=True, related_name='lists')
 
     def __unicode__(self):
         return self.nom
@@ -46,13 +47,14 @@ class Mail(models.Model):
     readers = models.ManyToManyField(Person, related_name='read_mails', blank=True)
 
     def __unicode__(self):
-        definition = str()
         if self.sent:
             definition = '"{0}" - Sent to {1} persons (around {2})'
         else:
             definition = '"{0}"'
+            if self.draft:
+                definition += " - Brouillon"
         return definition.format(self.sujet, len(self.recipients.all()),
-                                 self.date_creation.strftime('hh:MM the dd/mm/YYYY'))
+                                 self.date_envoi.strftime('hh:MM the dd/mm/YYYY'))
 
 
 class Link(models.Model):
