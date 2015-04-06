@@ -1,0 +1,32 @@
+{% load cms_tags staticfiles sekizai_tags cache menu_tags duxomusic_tags %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/dist/css/bootstrap.css" type="text/css" media="screen"/>
+    <link href="{{ STATIC_URL }}css/font-awesome/font-awesome.css" rel="stylesheet"/>
+    <link href="{{ STATIC_URL }}css/newsletter/stats.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1>Open Rate</h1>
+
+<div class="percent good" title="Open Rate" data-toggle="tooltip" data-placement="top">
+    <p class="percent-label"><i class="fa fa-envelope"></i></p><!--
+     --><p class="percent-value"><span>37</span>%</p>
+</div>
+<div class="percent average bad" title="Average" data-toggle="tooltip" data-placement="bottom">
+    <p class="percent-label"><i class="fa fa-external-link-square"></i></p><!--
+     --><p class="percent-value"><span>25</span>%</p>
+</div>
+
+<h1>Evolution</h1>
+<canvas id="trend" width="300" height="250"></canvas>
+
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/countUp.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/Chart.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/newsletter/stats.js"></script>
+</body>
+</html>

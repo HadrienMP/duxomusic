@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.http import HttpResponseRedirect
-from django.shortcuts import HttpResponse
+from django.shortcuts import HttpResponse, render
 import os
 
 from .forms import *
@@ -43,3 +43,7 @@ def read(request):
 
     image_data = open(_NEWSLETTER_DIR + "/static/img/placeholder.png", "rb").read()
     return HttpResponse(image_data, content_type="image/png")
+
+
+def stats(request):
+    return render(request, 'stats.html')

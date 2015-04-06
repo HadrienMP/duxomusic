@@ -1,0 +1,62 @@
+@import url(//fonts.googleapis.com/css?family=Oswald:400);
+@import "compass/css3";
+
+body {
+    background: #222428;
+    font-family: "Oswald", sans-serif;
+    padding: 20px 0;
+    color: #eee;
+    text-align: center;
+
+    h1 {
+        margin: 40px 0 30px;
+        text-transform: uppercase;
+        font-size: 2em;
+        @include text-shadow(0 -1px 0 #888);
+    }
+
+    .percent {
+        font-size: 2em;
+        .percent-label, .percent-value {
+            display: inline-block;
+            padding: 10px;
+            margin-bottom: 0;
+        }
+
+        &.good .percent-label { background: green; }
+        &.bad .percent-label { background: red; }
+
+        .percent-label {
+            @include border-radius(5px 0 0 5px);
+            width: 100px;
+
+            i { position: relative; top: -3px;}
+        }
+        .percent-value {
+            background: #ccc;
+            @include border-radius(0 5px 5px 0);
+            color: #333;
+            width: 200px;
+        }
+
+        &.average {
+            font-size: 1.5em;
+            @include opacity(0.9);
+
+            .percent-label, .percent-value {
+                border: 1px solid #888;
+                padding: 5px;
+            }
+            .percent-label {
+                width: 70px;
+                @include border-radius(0 0 0 5px);
+                background: #333;
+            }
+            .percent-value {
+                width: 170px;
+                @include border-radius(0 0 5px 0 );
+                border-left: none;
+            }
+        }
+    }
+}
