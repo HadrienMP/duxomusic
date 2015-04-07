@@ -43,4 +43,6 @@ class Command(BaseCommand):
         for newsletter in newsletters:
             newsletter.sent = True
             newsletter.date_envoi = timezone.now()
+            # Save the recipients to calculate an acurate in time open rate
+            newsletter.recipients = newsletter.list.subscribers.all()
             newsletter.save()

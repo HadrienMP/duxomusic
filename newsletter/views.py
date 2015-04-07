@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from __future__ import division
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import HttpResponse, render
 import os
@@ -46,4 +48,14 @@ def read(request):
 
 
 def stats(request):
-    return render(request, 'stats.html')
+    mails = Mail.objects.all()
+    sum_open_rates = 0
+    for mail in mails:
+        sum_open_rates += mail.readers.count() / mail.recipients.count()
+
+    data = {
+        'open_rate_last': mails[0].readers.count() / mails[0].recipients.count() * 100,
+        'open_rate_average': sum_open_rates / len(mails) * 100,
+    }
+
+    return render(request, 'stats.html', data)

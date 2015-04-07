@@ -43,6 +43,7 @@ class Mail(models.Model):
     sent = models.BooleanField(default=False)
 
     list = models.ForeignKey(List, related_name='mails')
+    recipients = models.ManyToManyField(Person, blank=True)
     readers = models.ManyToManyField(Person, related_name='read_mails', blank=True)
 
     def __unicode__(self):
@@ -54,6 +55,9 @@ class Mail(models.Model):
                 definition += " - Brouillon"
         return definition.format(self.sujet, len(self.recipients.all()),
                                  self.date_envoi.strftime('hh:MM the dd/mm/YYYY'))
+
+    class Meta:
+        ordering = ['-date_envoi']
 
 
 class Link(models.Model):

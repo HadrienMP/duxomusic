@@ -13,11 +13,11 @@
 
 <div class="percent good" title="Open Rate" data-toggle="tooltip" data-placement="top">
     <p class="percent-label"><i class="fa fa-envelope"></i></p><!--
-     --><p class="percent-value"><span>37</span>%</p>
+     --><p class="percent-value"><span>{{ open_rate_last|floatformat:"0" }}</span>%</p>
 </div>
 <div class="percent average bad" title="Average" data-toggle="tooltip" data-placement="bottom">
     <p class="percent-label"><i class="fa fa-external-link-square"></i></p><!--
-     --><p class="percent-value"><span>25</span>%</p>
+     --><p class="percent-value"><span>{{ open_rate_average|floatformat:"0" }}</span>%</p>
 </div>
 
 <h1>Evolution</h1>
