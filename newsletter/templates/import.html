@@ -1,0 +1,40 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<h1>Import de masse</h1>
+
+{% load nm_msgs_tags %}
+{% nm_success "newsletter" as success %}
+{% if success %}
+{% for message in success %}
+<p class="text-success">
+    <i class="fa fa-check"></i>&nbsp;{{ message }}
+</p>
+{% endfor %}
+{% endif %}
+{% nm_warnings "newsletter" as warnings %}
+{% if warnings %}
+{% for message in warnings %}
+<p class="text-warning">
+    {{ message }}
+</p>
+{% endfor %}
+{% endif %}
+
+<form action="/newsletter/import" method="post" role="form"
+      {% if form.is_multipart %}enctype="multipart/form-data" {% endif %}>
+    {% csrf_token %}
+
+    {% for field in form %}
+    <div class="form-group {{ field.errors|yesno:'has-error,no' }}" data-toggle="tooltip" title="{{ field.help_text }}">
+        <label class="control-label" for="{{ field.id_for_label }}">{{ field.label }}&nbsp;:</label>
+        {{ field }}
+        <div class="help-block">{{ field.errors }}</div>
+    </div>
+    {% endfor %}
+
+    <button class="btn btn-success" type="submit">
+        <i class="fa fa-send"></i>&nbsp;Importer
+    </button>
+</form>
+{% endblock %}

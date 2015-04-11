@@ -23,8 +23,8 @@ body {
             margin-bottom: 0;
         }
 
-        &.good .percent-label { background: green; }
-        &.bad .percent-label { background: red; }
+        //&.good .percent-label { background: green; }
+        //&.bad .percent-label { background: red; }
 
         .percent-label {
             @include border-radius(5px 0 0 5px);
@@ -58,5 +58,33 @@ body {
                 border-left: none;
             }
         }
+    }
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+    text-align: justify;
+    margin: 40px auto 20px;
+    padding: 0 10px;
+
+    input[type="file"] { display: inline-block !important;}
+    label { width: 20% }
+    input { width: 79% }
+    .help-block {
+        margin-left: 20%;
+
+        ul {
+            padding: 0;
+
+            li {
+                list-style-type: none;
+            }
+        }
+    }
+    button[type="submit"] {
+        width: 100%;
+        margin-top: 20px;
+        i { margin-left: -10px; margin-right: 5px; }
     }
 }

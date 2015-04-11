@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 
+import csv
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import HttpResponse, render
-import os
 
 from .forms import *
 from .models import *
@@ -48,14 +49,73 @@ def read(request):
 
 
 def stats(request):
-    mails = Mail.objects.all()
-    sum_open_rates = 0
-    for mail in mails:
-        sum_open_rates += mail.readers.count() / mail.recipients.count()
-
     data = {
-        'open_rate_last': mails[0].readers.count() / mails[0].recipients.count() * 100,
-        'open_rate_average': sum_open_rates / len(mails) * 100,
+        'open_rate_last': 0,
+        'open_rate_average': 0,
+        'ids': list(),
+        'recipients': list(),
+        'open_rates': list(),
+        'readers': list(),
     }
 
+    mails = Mail.objects.all()
+
+    if mails.count() > 0:
+
+        sum_open_rates = 0
+        for mail in mails:
+            sum_open_rates += mail.readers.count() / mail.recipients.count()
+
+        data = {
+            'open_rate_last': mails[0].readers.count() / mails[0].recipients.count() * 100,
+            'open_rate_average': sum_open_rates / len(mails) * 100,
+            'ids': list(),
+            'recipients': list(),
+            'open_rates': list(),
+            'readers': list(),
+        }
+
+        for mail in mails[:10]:
+            data['ids'].append('#' + str(mail.pk))
+            data['recipients'].append(mail.recipients.count())
+            data['readers'].append(mail.readers.count())
+            data['open_rates'].append(mail.readers.count() / mail.recipients.count() * 100)
+
     return render(request, 'stats.html', data)
+
+
+def mass_import(request):
+    if request.method == 'POST':
+        form = ImportForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            uploaded = request.FILES['file']
+            file_reader = csv.DictReader(uploaded, delimiter=',', quotechar='"')
+            to_create = list()
+            rejected = list()
+            for row in file_reader:
+                if Person.objects.filter(email=row['email']).count() == 0:
+                    person = Person()
+                    person.email = row['email']
+                    person.nom = row['name']
+                    person.date_creation = datetime.datetime.strptime(row['sign_up'], "%Y-%m-%d %H:%M:%S")
+                    to_create.append(person)
+                else:
+                    rejected.append(row)
+
+            Person.objects.bulk_create(to_create)
+
+            if len(rejected) != 0:
+                nm_msgs.warning(request,
+                                message=u"Les lignes suivantes existent déjà : " + str(rejected),
+                                namespace="newsletter")
+            nm_msgs.success(request,
+                            message=u"L'import a été effectué avec succès",
+                            namespace="newsletter")
+            return HttpResponseRedirect('')
+    else:
+        form = ImportForm()
+
+    return render(request, 'import.html', {
+        'form': form
+    })

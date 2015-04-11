@@ -1,0 +1,19 @@
+{% load cms_tags staticfiles sekizai_tags cache menu_tags duxomusic_tags %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css" type="text/css" media="screen"/>
+    <link href="{{ STATIC_URL }}css/font-awesome/font-awesome.css" rel="stylesheet"/>
+    <link href="{{ STATIC_URL }}css/newsletter/stats.css" rel="stylesheet" type="text/css"/>
+    {% block css %}{% endblock %}
+</head>
+<body>
+{% block content %}{% endblock %}
+
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+{% block js %}{% endblock %}
+</body>
+</html>

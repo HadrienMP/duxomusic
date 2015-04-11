@@ -11,8 +11,13 @@ def nm_msgs(context, namespace=None):
 
 
 @register.assignment_tag(takes_context=True)
-def success_nm_msgs(context, namespace=None):
+def nm_success(context, namespace=None):
     return __get_nm_msgs(context, namespace=namespace, p_level='success').get('messages', None)
+
+
+@register.assignment_tag(takes_context=True)
+def nm_warnings(context, namespace=None):
+    return __get_nm_msgs(context, namespace=namespace, p_level='warning').get('messages', None)
 
 
 @register.inclusion_tag('nm_msgs/main.html', takes_context=True)

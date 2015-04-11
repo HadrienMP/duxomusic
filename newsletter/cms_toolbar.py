@@ -9,5 +9,5 @@ from cms.toolbar_base import CMSToolbar
 class NewsletterToolbar(CMSToolbar):
     def populate(self):
         menu = self.toolbar.get_or_create_menu('newsletter-app', _('Newsletter'))
-        url = reverse('newsletter:stats')
-        menu.add_sideframe_item(_('Stats'), url=url)
+        menu.add_sideframe_item(_('Stats'), url=reverse('newsletter:stats'))
+        menu.add_sideframe_item(_('Import'), url=reverse('newsletter:import'))
