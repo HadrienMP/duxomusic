@@ -1,8 +1,18 @@
 # -*-coding:utf-8-*-
-from django.forms import ModelForm, TextInput, EmailInput, Form, IntegerField, FileField, ValidationError
+from django.forms import ModelForm, TextInput, EmailInput, Form, IntegerField, FileField, ValidationError, CharField
 import os
 
 from .models import Person
+
+
+class NewsletterForm(ModelForm):
+    class Meta:
+        model = Person
+        fields = ['email', 'nom']
+        widgets = {
+            'email': EmailInput(attrs={'placeholder': 'Email', 'required': True}),
+            'nom': TextInput(attrs={'placeholder': 'Nom', 'required': True})
+        }
 
 
 def csv_only(value):
@@ -19,16 +29,6 @@ def required_cols(value):
         raise ValidationError(u'Le fichier doit contenir au minimun les colonnes "email" et "name"')
 
 
-class NewsletterForm(ModelForm):
-    class Meta:
-        model = Person
-        fields = ['email', 'nom']
-        widgets = {
-            'email': EmailInput(attrs={'placeholder': 'Email', 'required': True}),
-            'nom': TextInput(attrs={'placeholder': 'Nom', 'required': True})
-        }
-
-
 class ImportForm(Form):
     file = FileField(help_text="Fichier au format csv contenant les colonnes name, email, sign_up",
                      validators=[csv_only, required_cols])
@@ -37,3 +37,7 @@ class ImportForm(Form):
 class ReadForm(Form):
     person_id = IntegerField()
     mail_id = IntegerField()
+
+
+class ActivationForm(Form):
+    token = CharField()

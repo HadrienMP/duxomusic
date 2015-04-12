@@ -1,0 +1,11 @@
+Salut {{ nom }} !
+
+Je t'envoies ce mail car tu t'es inscris à ma newsletter sur duxomusic.com.
+
+Pour confirmer ton inscription cliques sur ce lien : <a href="{{ activation_link }}">{{ activation_link }}</a>.
+
+Si tu n'es pas à l'origine de cette action, ne cliques pas sur le lien. Ton email sera supprimé de la base de données dans 7 jours.
+
+A tout de suite !
+
+Dux'O

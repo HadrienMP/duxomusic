@@ -63,52 +63,52 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 4, ../sass/_modern-less.scss */
+/* line 3, ../sass/_modern-less.scss */
 html, body, #sb-site {
   height: 100%;
 }
 
-/* line 6, ../sass/_modern-less.scss */
+/* line 5, ../sass/_modern-less.scss */
 body {
   color: white;
   font-family: "Poiret One", Arial, sans-serif;
   font-weight: bold;
 }
-/* line 12, ../sass/_modern-less.scss */
+/* line 11, ../sass/_modern-less.scss */
 body #wrapper {
   position: relative;
   padding-bottom: 100px;
 }
-/* line 17, ../sass/_modern-less.scss */
+/* line 16, ../sass/_modern-less.scss */
 body header {
   text-align: center;
 }
-/* line 20, ../sass/_modern-less.scss */
+/* line 19, ../sass/_modern-less.scss */
 body header h1, body header nav {
   display: inline-block;
   vertical-align: top;
 }
-/* line 24, ../sass/_modern-less.scss */
+/* line 23, ../sass/_modern-less.scss */
 body header h1 {
   margin: 100px 0;
   max-width: 100%;
 }
-/* line 28, ../sass/_modern-less.scss */
+/* line 27, ../sass/_modern-less.scss */
 body header h1 a {
   display: block;
   width: 100%;
   height: 100%;
 }
-/* line 32, ../sass/_modern-less.scss */
+/* line 31, ../sass/_modern-less.scss */
 body header h1 a img {
   max-width: 100%;
 }
-/* line 38, ../sass/_modern-less.scss */
+/* line 37, ../sass/_modern-less.scss */
 body header > a {
   display: none;
 }
 @media only screen and (min-width: 241px) and (max-width: 858px) {
-  /* line 38, ../sass/_modern-less.scss */
+  /* line 37, ../sass/_modern-less.scss */
   body header > a {
     display: inline-block;
     font-size: 2em;
@@ -117,7 +117,7 @@ body header > a {
     right: 0;
   }
 }
-/* line 50, ../sass/_modern-less.scss */
+/* line 49, ../sass/_modern-less.scss */
 body header nav {
   position: absolute;
   right: 0;
@@ -126,49 +126,49 @@ body header nav {
   width: 81%;
 }
 @media only screen and (min-width: 241px) and (max-width: 858px) {
-  /* line 50, ../sass/_modern-less.scss */
+  /* line 49, ../sass/_modern-less.scss */
   body header nav {
     width: 100%;
     background: black;
     display: none;
   }
 }
-/* line 63, ../sass/_modern-less.scss */
+/* line 62, ../sass/_modern-less.scss */
 body header nav li {
   display: inline-block;
 }
-/* line 66, ../sass/_modern-less.scss */
+/* line 65, ../sass/_modern-less.scss */
 body header nav li:hover:nth-child(odd) a {
   background: url(../img/el1.png) 40% 2px no-repeat;
   background-size: 94px auto;
 }
-/* line 70, ../sass/_modern-less.scss */
+/* line 69, ../sass/_modern-less.scss */
 body header nav li:hover:nth-child(even) a {
   background: url(../img/el2.png) 40% 8px no-repeat;
   background-size: 89px auto;
 }
-/* line 75, ../sass/_modern-less.scss */
+/* line 74, ../sass/_modern-less.scss */
 body header nav li:first-child a {
   padding-left: 45px;
   background-position: right center;
   background-size: 120px auto;
 }
-/* line 80, ../sass/_modern-less.scss */
+/* line 79, ../sass/_modern-less.scss */
 body header nav li:first-child:hover a, body header nav li:first-child a.active {
   background: url(../img/first-menu-el3.png) 0px 15px no-repeat;
   background-size: 120px auto;
 }
-/* line 84, ../sass/_modern-less.scss */
+/* line 83, ../sass/_modern-less.scss */
 body header nav li:last-child a {
   padding-right: 45px;
   background-position: left center;
 }
-/* line 88, ../sass/_modern-less.scss */
+/* line 87, ../sass/_modern-less.scss */
 body header nav li:last-child:hover a, body header nav li:last-child a.active {
   background: url(../img/last-menu-el2.png) no-repeat right 15px;
   background-size: 120px auto;
 }
-/* line 93, ../sass/_modern-less.scss */
+/* line 92, ../sass/_modern-less.scss */
 body header nav li a {
   display: block;
   padding: 50px 0px 50px;
@@ -183,7 +183,7 @@ body header nav li a {
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 101, ../sass/_modern-less.scss */
+/* line 100, ../sass/_modern-less.scss */
 body header nav li a span {
   color: #aaa;
   padding: 16px 25px 15px;
@@ -204,29 +204,29 @@ body header nav li a span {
   transition-duration: 0.3s;
 }
 @media only screen and (min-width: 241px) and (max-width: 858px) {
-  /* line 101, ../sass/_modern-less.scss */
+  /* line 100, ../sass/_modern-less.scss */
   body header nav li a span {
     font-size: .8em;
     min-width: 0px;
     padding: 16px 15px 15px;
   }
 }
-/* line 121, ../sass/_modern-less.scss */
+/* line 120, ../sass/_modern-less.scss */
 body header nav li a:hover span, body header nav li a.active span {
   color: white;
   text-shadow: 0px 0px 10px white;
 }
-/* line 129, ../sass/_modern-less.scss */
+/* line 128, ../sass/_modern-less.scss */
 body #wrap {
   margin: 0px auto;
   max-width: 1700px;
 }
 @media only screen and (max-width: 240px) {
-  /* line 135, ../sass/_modern-less.scss */
+  /* line 134, ../sass/_modern-less.scss */
   body #wrap .container-fluid {
     padding: 4px;
   }
-  /* line 138, ../sass/_modern-less.scss */
+  /* line 137, ../sass/_modern-less.scss */
   body #wrap .col-xs-1, body #wrap .col-sm-1, body #wrap .col-md-1, body #wrap .col-lg-1, body #wrap .col-xs-2,
   body #wrap .col-sm-2, body #wrap .col-md-2, body #wrap .col-lg-2, body #wrap .col-xs-3, body #wrap .col-sm-3,
   body #wrap .col-md-3, body #wrap .col-lg-3, body #wrap .col-xs-4, body #wrap .col-sm-4, body #wrap .col-md-4,
@@ -242,11 +242,11 @@ body #wrap {
   }
 }
 @media only screen and (min-width: 241px) and (max-width: 858px) {
-  /* line 135, ../sass/_modern-less.scss */
+  /* line 134, ../sass/_modern-less.scss */
   body #wrap .container-fluid {
     padding: 4px;
   }
-  /* line 138, ../sass/_modern-less.scss */
+  /* line 137, ../sass/_modern-less.scss */
   body #wrap .col-xs-1, body #wrap .col-sm-1, body #wrap .col-md-1, body #wrap .col-lg-1, body #wrap .col-xs-2,
   body #wrap .col-sm-2, body #wrap .col-md-2, body #wrap .col-lg-2, body #wrap .col-xs-3, body #wrap .col-sm-3,
   body #wrap .col-md-3, body #wrap .col-lg-3, body #wrap .col-xs-4, body #wrap .col-sm-4, body #wrap .col-md-4,
@@ -261,12 +261,12 @@ body #wrap {
     padding-right: 8px;
   }
 }
-/* line 152, ../sass/_modern-less.scss */
+/* line 151, ../sass/_modern-less.scss */
 body #sb-site {
   box-shadow: 3px 0px 18px black;
   overflow: auto;
 }
-/* line 157, ../sass/_modern-less.scss */
+/* line 156, ../sass/_modern-less.scss */
 body .sb-slidebar li a {
   padding: 20px 15px 20px 15px;
   display: block;
@@ -285,7 +285,7 @@ body .sb-slidebar li a {
   color: #aaa;
   border-bottom: 1px solid #333;
 }
-/* line 169, ../sass/_modern-less.scss */
+/* line 168, ../sass/_modern-less.scss */
 body .sb-slidebar li a:hover, body .sb-slidebar li a.active {
   padding-left: 40px;
   color: white;
@@ -293,15 +293,29 @@ body .sb-slidebar li a:hover, body .sb-slidebar li a.active {
   text-shadow: 0px 0px 10px white;
 }
 
-/* line 180, ../sass/_modern-less.scss */
-a, a:hover, a:visited, a:focus {
-  color: white;
+/* line 179, ../sass/_modern-less.scss */
+a, a:visited, a:focus {
+  color: #47a0ff;
   text-decoration: none;
   border: none;
   outline: none;
+  -moz-transition-property: text-shadow, text-decoration;
+  -o-transition-property: text-shadow, text-decoration;
+  -webkit-transition-property: text-shadow, text-decoration;
+  transition-property: text-shadow, text-decoration;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
 /* line 187, ../sass/_modern-less.scss */
+a:hover {
+  text-decoration: underline;
+  text-shadow: 0px 0px 10px #47a0ff;
+}
+
+/* line 192, ../sass/_modern-less.scss */
 section.block {
   background: rgba(0, 0, 0, 0.8);
   -moz-border-radius: 3px;
@@ -468,6 +482,45 @@ section.block {
 /* line 65, ../sass/newsletter/_newsletter.scss */
 .newsletter.block .success_message p:first-child {
   margin-top: 0;
+}
+
+/* line 1, ../sass/newsletter/_app.scss */
+.newsletter-app {
+  text-align: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  padding: 20px !important;
+}
+/* line 8, ../sass/newsletter/_app.scss */
+.newsletter-app header {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 11, ../sass/newsletter/_app.scss */
+.newsletter-app header h1 {
+  margin: 0;
+}
+/* line 13, ../sass/newsletter/_app.scss */
+.newsletter-app header h1 img {
+  width: 300px;
+}
+/* line 18, ../sass/newsletter/_app.scss */
+.newsletter-app article {
+  max-width: 500px;
+  margin: 0 auto;
+  display: inline-block;
+}
+/* line 23, ../sass/newsletter/_app.scss */
+.newsletter-app article * {
+  margin: 10px 0;
+}
+/* line 25, ../sass/newsletter/_app.scss */
+.newsletter-app article h1 {
+  font-size: 2em;
+  font-weight: bold;
 }
 
 /* line 1, ../sass/title_divider/_title_divider.scss */

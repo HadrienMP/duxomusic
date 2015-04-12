@@ -1,0 +1,30 @@
+.newsletter-app {
+    text-align: center;
+    padding: 10px;
+    background: $black-back;
+    @include border-radius(3px);
+    padding: 20px !important;
+
+    header {
+        display: inline-block;
+        vertical-align: top;
+        h1 {
+            margin: 0;
+            img {
+                width: 300px;
+            }
+        }
+    }
+    article {
+        max-width: 500px;
+        margin: 0 auto;
+        display: inline-block;
+
+        * {margin: 10px 0;}
+
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    }
+}

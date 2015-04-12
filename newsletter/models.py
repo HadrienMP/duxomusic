@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from cms.models.pluginmodel import CMSPlugin
+from uuidfield import UUIDField
 
 
 class Person(models.Model):
@@ -12,6 +13,9 @@ class Person(models.Model):
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)
     date_desinscription = models.DateTimeField(blank=True, null=True)
+    opt_in = models.BooleanField(default=False)
+    active = models.BooleanField(default=False)
+    token = UUIDField(auto=True)
 
     def __unicode__(self):
         return '{0} : {1}'.format(self.nom, self.email)

@@ -1,12 +1,6 @@
 @import "compass/reset";
 @import "compass/css3";
 
-$break-small: 240px;
-$break-medium: 859px;
-$break-large: 1183px;
-$font: "Poiret One";
-$black-back: rgba(0,0,0,0.8);
-
 @mixin respond-to($medias...) {
     @if index($medias, handhelds) {
         @media only screen and (max-width: $break-small) { @content; }

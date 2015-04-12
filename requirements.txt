@@ -9,9 +9,10 @@ django-mptt==0.6.1
 django-polymorphic==0.6
 django-sekizai==0.7
 Django-Select2==4.2.2
+django-uuidfield==0.5.0
 djangocms-admin-style==0.2.2
 -e git+https://github.com/jrief/djangocms-bootstrap3.git@eb915b57b95802437a46c1e57864e6c1fc7e215a#egg=djangocms_bootstrap3-0.0.2
--e git+https://github.com/jrief/djangocms-cascade.git@47fee4b9486dbfdaab14f7b5841ba3c0146abb61#egg=djangocms_cascade-master
+-e git+https://github.com/jrief/djangocms-cascade.git@47fee4b9486dbfdaab14f7b5841ba3c0146abb61#egg=djangocms_cascade-dev
 djangocms-text-ckeditor==2.4.2
 -e git+https://github.com/jrief/easy-thumbnails.git@f93b2f10f36488db9135912f178c7f844b79de5e#egg=easy_thumbnails-2.2.1
 envdir==0.7
@@ -25,4 +26,3 @@ six==1.8.0
 soundcloud==0.4.1
 South==1.0.1
 Unidecode==0.4.16
-ysHUsymmV8YYTmD@%@%X

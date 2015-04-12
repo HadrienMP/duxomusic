@@ -3,5 +3,5 @@
 Dux'O
 
 -----------------------------
-Pour te désinscrire :
-Pour changer tes informations :
+Pour te désinscrire : {{ unsubscribe_url }}
+Pour changer tes informations : {{ change_info_url }}

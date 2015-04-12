@@ -1,5 +1,4 @@
-$color: white;
-$font: "Poiret One";
+@import "variables";
 
 html, body, #sb-site {height: 100%;}
 
@@ -177,11 +176,17 @@ body {
 
 }
 
-a, a:hover, a:visited, a:focus {
-  color: $color;
+a, a:visited, a:focus {
+  color: $link-color;
   text-decoration: none;
   border: none;
   outline: none;
+  @include transition-property(text-shadow, text-decoration);
+  @include transition-duration(.3s);
+}
+a:hover {
+    text-decoration: underline;
+    text-shadow: 0px 0px 10px $link-color;
 }
 
 section.block {
@@ -192,4 +197,5 @@ section.block {
 
 @import "contact/contact";
 @import "newsletter/newsletter";
+@import "newsletter/app";
 @import "title_divider/title_divider";

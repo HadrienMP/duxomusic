@@ -5,13 +5,17 @@ import csv
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import HttpResponse, render
+from django.contrib.auth.decorators import login_required
+from django.utils import timezone
 
 from .forms import *
-from .models import *
+from .service import *
 import nm_msgs
 
 
 _NEWSLETTER_DIR = os.path.abspath(os.path.dirname(__file__))
+_SENDER = settings.DEFAULT_FROM_EMAIL
+_READ_URL = settings.BASE_URL + '/newsletter/read?person_id={0}&amp;mail_id={1}'
 
 
 def subscribe(request):
@@ -21,6 +25,10 @@ def subscribe(request):
             person = form.save()
             person.lists = List.objects.all()
             person.save()
+
+            # Sends the confirmation message
+            send_confirmation_mail(person)
+
             nm_msgs.success(request,
                             message=u"Merci pour ton inscription " + person.nom + " !",
                             namespace="newsletter")
@@ -37,17 +45,50 @@ def read(request):
     form = ReadForm(request.GET)
     if form.is_valid():
 
-        mail = Mail.objects.get(pk=form.cleaned_data['mail_id'])
+        newsletter = Mail.objects.get(pk=form.cleaned_data['mail_id'])
         person = Person.objects.get(pk=form.cleaned_data['person_id'])
 
-        if mail and person:
-            mail.readers.add(person)
-            mail.save()
+        if newsletter and person:
+            newsletter.readers.add(person)
+            newsletter.save()
 
     image_data = open(_NEWSLETTER_DIR + "/static/img/placeholder.png", "rb").read()
     return HttpResponse(image_data, content_type="image/png")
 
 
+def activate(request):
+    form = ActivationForm(request.GET)
+    if form.is_valid():
+
+        person = Person.objects.get(token=form.cleaned_data['token'])
+
+        if person:
+            person.active = True
+            person.opt_in = True
+            person.save()
+
+    return render(request, 'app/confirmation.html')
+
+
+def unsubscribe(request):
+    form = ActivationForm(request.GET)
+    if form.is_valid():
+
+        person = Person.objects.get(token=form.cleaned_data['token'])
+
+        if person:
+            person.active = False
+            person.date_desinscription = timezone.now()
+            person.save()
+
+    return render(request, 'app/unsubscribe.html')
+
+
+def edit_user(request):
+    return render(request, 'app/edit.html')
+
+
+@login_required
 def stats(request):
     data = {
         'open_rate_last': 0,
@@ -81,9 +122,10 @@ def stats(request):
             data['readers'].append(mail.readers.count())
             data['open_rates'].append(mail.readers.count() / mail.recipients.count() * 100)
 
-    return render(request, 'stats.html', data)
+    return render(request, 'newsletter_admin/stats.html', data)
 
 
+@login_required
 def mass_import(request):
     if request.method == 'POST':
         form = ImportForm(request.POST, request.FILES)
@@ -99,6 +141,7 @@ def mass_import(request):
                     person.email = row['email']
                     person.nom = row['name']
                     person.date_creation = datetime.datetime.strptime(row['sign_up'], "%Y-%m-%d %H:%M:%S")
+                    person.active = True
                     to_create.append(person)
                 else:
                     rejected.append(row)
@@ -116,6 +159,6 @@ def mass_import(request):
     else:
         form = ImportForm()
 
-    return render(request, 'import.html', {
+    return render(request, 'newsletter_admin/import.html', {
         'form': form
     })
