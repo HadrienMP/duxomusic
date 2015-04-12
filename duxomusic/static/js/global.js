@@ -17,12 +17,4 @@ $(function() {
             .css('left', ($(this).innerWidth() - $p.width()) / 2)
             .css('margin-top', '0');
     });
-
-
-//    var $img = $('header h1 img');
-//    var $imgParent = $img.parent();
-//    $imgParent.css('height', $imgParent.height()).css('width', $imgParent.width());
-//    $img.hide(function() {
-//        $img.slideDown("slow");
-//    });
 });
