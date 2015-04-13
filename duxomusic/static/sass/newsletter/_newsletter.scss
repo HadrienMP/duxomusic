@@ -49,20 +49,20 @@
   }
 
   .success_message {
-    text-align: center;
-    margin: 10px 0 20px;
+        text-align: center;
+        margin: 10px 0 20px;
 
-    .icon {
-        font-size: 4em;
-        padding: 5px 0px 10px;
-        background: #0067d6;
+        .icon {
+            font-size: 4em;
+            padding: 5px 0px 10px;
+            background: #0067d6;
 
-        & + p { margin: 30px 0 30px !important; }
+            & + p { margin: 30px 0 30px !important; }
+        }
+        p strong { font-weight: bold; font-size: 1.5em; }
+        p {
+            margin-top: 20px;
+            &:first-child { margin-top: 0; }
+        }
     }
-    p strong { font-weight: bold; font-size: 1.5em; }
-    p {
-        margin-top: 20px;
-        &:first-child { margin-top: 0; }
-    }
-}
 }

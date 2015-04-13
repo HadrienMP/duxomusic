@@ -7,13 +7,17 @@
     <div class="success_message">
         <p class="icon"><i class="fa fa-check-circle-o"></i></p>
         <p><strong>{{ messages.0 }}</strong></p>
+
+        {% if not action %}
         <p>
             Il ne te reste plus qu'à la confirmer en cliquant
             sur le lien dans l'email que je t'ai envoyé.
         </p>
 
         <p>Si tu ne l'a pas reçu écris-moi, j'arrangerais ça.</p>
+
         <p>A tout de suite !</p>
+        {% endif %}
     </div>
 
     {% else %}
@@ -22,12 +26,14 @@
         <p class="call-to-action">{{ instance.call_to_action }}</p>
     {% endif %}
 
-    <form class="ajax" action="/newsletter/subscribe" method="post">
+    {% if form %}
+    <form class="ajax" action="{% if action %}{{ action }}{% else %}/newsletter/subscribe{% endif %}" method="post">
         {% csrf_token %}
-        <input type="hidden" name="type" value="newsletter" />
+        <input type="hidden" name="type" value="newsletter"/>
         {{ form.as_p }}
         <button type="submit">Inscription</button>
     </form>
+    {% endif %}
 
     {% endif %}
 </section>

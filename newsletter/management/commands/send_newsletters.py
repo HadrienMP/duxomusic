@@ -16,6 +16,7 @@ class Command(BaseCommand):
         newsletters = Mail.objects.filter(date_envoi__lte=timezone.now(), draft=False, sent=False)
 
         to_send = list()
+
         for newsletter in newsletters:
             for person in newsletter.list.subscribers.filter(active=True):
                 to_send.append(prepare_newsletter(person, newsletter))

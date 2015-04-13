@@ -7,6 +7,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import HttpResponse, render
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from django.shortcuts import get_object_or_404
+from django.shortcuts import redirect
 
 from .forms import *
 from .service import *
@@ -85,7 +87,28 @@ def unsubscribe(request):
 
 
 def edit_user(request):
-    return render(request, 'app/edit.html')
+    newsletter_form = None
+    person = None
+
+    # Get the person that correspond to the token
+    form = ActivationForm(request.GET or None)
+    if form.is_valid():
+        person = get_object_or_404(Person, token=form.cleaned_data['token'])
+        newsletter_form = NewsletterForm(instance=person)
+
+    if request.POST:
+        newsletter_form = NewsletterForm(request.POST, instance=person)
+        if newsletter_form.is_valid():
+            newsletter_form.save()
+            nm_msgs.success(request,
+                            message=u"Modification terminée.",
+                            namespace="newsletter")
+            return redirect(request.get_full_path())
+
+    if newsletter_form:
+        return render(request, 'app/edit.html', {'form': newsletter_form, 'action': request.get_full_path()})
+    else:
+        return redirect('/')
 
 
 @login_required
