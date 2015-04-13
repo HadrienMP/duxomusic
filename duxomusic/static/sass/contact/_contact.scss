@@ -25,7 +25,7 @@ $item-margin-top: 4px;
 
       &:hover .inside {
         transform: rotateY(-180deg);
-        @include text-shadow(0 0 10px white);
+        @include text-shadow(0);
       }
 
       .inside {

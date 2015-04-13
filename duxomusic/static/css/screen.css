@@ -352,7 +352,7 @@ body #sb-site .contact li a {
 /* line 26, ../sass/contact/_contact.scss */
 body #sb-site .contact li a:hover .inside {
   transform: rotateY(-180deg);
-  text-shadow: 0 0 10px white;
+  text-shadow: 0;
 }
 /* line 31, ../sass/contact/_contact.scss */
 body #sb-site .contact li a .inside {
@@ -406,12 +406,13 @@ body #sb-site .newsletter.block p:first-child {
 /* line 12, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block p.call-to-action {
   margin: 10px 0 20px;
+  text-align: justify;
 }
-/* line 16, ../sass/newsletter/_newsletter.scss */
+/* line 17, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block label {
   display: none;
 }
-/* line 19, ../sass/newsletter/_newsletter.scss */
+/* line 20, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block input {
   background: none;
   border: 2px solid #555;
@@ -428,11 +429,11 @@ body #sb-site .newsletter.block input {
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-/* line 29, ../sass/newsletter/_newsletter.scss */
+/* line 30, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block input:hover {
   border-color: #888;
 }
-/* line 33, ../sass/newsletter/_newsletter.scss */
+/* line 34, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block button[type="submit"] {
   width: 100%;
   margin-top: 20px;
@@ -451,36 +452,36 @@ body #sb-site .newsletter.block button[type="submit"] {
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-/* line 45, ../sass/newsletter/_newsletter.scss */
+/* line 46, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block button[type="submit"]:hover {
   background: #0078FA;
   text-shadow: rgba(255, 255, 255, 0.7) 0 0 5px;
 }
-/* line 51, ../sass/newsletter/_newsletter.scss */
+/* line 52, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block .success_message {
   text-align: center;
   margin: 10px 0 20px;
 }
-/* line 55, ../sass/newsletter/_newsletter.scss */
+/* line 56, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block .success_message .icon {
   font-size: 4em;
   padding: 5px 0px 10px;
   background: #0067d6;
 }
-/* line 60, ../sass/newsletter/_newsletter.scss */
+/* line 61, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block .success_message .icon + p {
   margin: 30px 0 30px !important;
 }
-/* line 62, ../sass/newsletter/_newsletter.scss */
+/* line 63, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block .success_message p strong {
   font-weight: bold;
   font-size: 1.5em;
 }
-/* line 63, ../sass/newsletter/_newsletter.scss */
+/* line 64, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block .success_message p {
   margin-top: 20px;
 }
-/* line 65, ../sass/newsletter/_newsletter.scss */
+/* line 66, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block .success_message p:first-child {
   margin-top: 0;
 }
