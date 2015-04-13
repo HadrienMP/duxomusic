@@ -1,4 +1,4 @@
-# -*-coding:utf-8-*-
+# -*- coding: utf-8 -*-
 from django.forms import ModelForm, TextInput, EmailInput, Form, IntegerField, FileField, ValidationError, CharField
 import os
 

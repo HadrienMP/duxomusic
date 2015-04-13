@@ -3,6 +3,7 @@ import datetime
 from django.db import models
 from cms.models.pluginmodel import CMSPlugin
 from uuidfield import UUIDField
+from django.utils.translation import ugettext_lazy as _
 
 
 class Person(models.Model):
@@ -19,6 +20,10 @@ class Person(models.Model):
 
     def __unicode__(self):
         return '{0} : {1}'.format(self.nom, self.email)
+
+    class Meta:
+        verbose_name = _('personne')
+        verbose_name_plural = _('personnes')
 
 
 class List(models.Model):

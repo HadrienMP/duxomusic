@@ -47,7 +47,7 @@ def prepare_newsletter(person, newsletter):
         'corps': newsletter.corps.format(nom=person.nom),
         'read_track_url': _READ_URL.format(person.pk, newsletter.pk),
         'unsubscribe_url': _UNSUBSCRIBE_URL.format(person.token),
-        'change_info_url': ''
+        'change_info_url': _EDIT_URL.format(person.token)
     }
     text_content = render_to_string('mail/newsletter.txt', data)
     html_content = render_to_string('mail/newsletter.html', data)
