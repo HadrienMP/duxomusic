@@ -347,12 +347,14 @@ body #sb-site .contact li a {
   text-align: center;
   perspective: 800px;
   position: relative;
+  color: white;
 }
-/* line 25, ../sass/contact/_contact.scss */
+/* line 26, ../sass/contact/_contact.scss */
 body #sb-site .contact li a:hover .inside {
   transform: rotateY(-180deg);
+  text-shadow: 0 0 10px white;
 }
-/* line 29, ../sass/contact/_contact.scss */
+/* line 31, ../sass/contact/_contact.scss */
 body #sb-site .contact li a .inside {
   width: 100%;
   height: 100%;
@@ -360,7 +362,7 @@ body #sb-site .contact li a .inside {
   transform-style: preserve-3d;
   transition: transform 1s;
 }
-/* line 36, ../sass/contact/_contact.scss */
+/* line 38, ../sass/contact/_contact.scss */
 body #sb-site .contact li a .inside div {
   display: block;
   position: absolute;
@@ -369,17 +371,17 @@ body #sb-site .contact li a .inside div {
   backface-visibility: hidden;
   background: #444;
 }
-/* line 44, ../sass/contact/_contact.scss */
+/* line 46, ../sass/contact/_contact.scss */
 body #sb-site .contact li a .inside div i {
   font-size: 2.5em;
   margin-top: 30px;
 }
-/* line 48, ../sass/contact/_contact.scss */
+/* line 50, ../sass/contact/_contact.scss */
 body #sb-site .contact li a .inside div p {
   font-size: 1.1em;
   margin-top: 40px;
 }
-/* line 53, ../sass/contact/_contact.scss */
+/* line 55, ../sass/contact/_contact.scss */
 body #sb-site .contact li a .inside div.back {
   transform: rotateY(180deg);
   word-wrap: break-word;

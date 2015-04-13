@@ -21,9 +21,11 @@ $item-margin-top: 4px;
       text-align: center;
       perspective: 800px;
       position: relative;
+      color: $color;
 
       &:hover .inside {
         transform: rotateY(-180deg);
+        @include text-shadow(0 0 10px white);
       }
 
       .inside {
