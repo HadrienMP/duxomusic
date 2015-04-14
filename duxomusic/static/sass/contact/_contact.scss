@@ -22,10 +22,11 @@ $item-margin-top: 4px;
       perspective: 800px;
       position: relative;
       color: $color;
+      @include text-shadow(0 0 0 white);
 
       &:hover .inside {
         transform: rotateY(-180deg);
-        @include text-shadow(0);
+        @include text-shadow(0 0 0 white);
       }
 
       .inside {
