@@ -25,7 +25,7 @@ def send_confirmation_mail(person):
 
 def _confirmation_mail_data(person):
     data = {
-        'nom': person.nom,
+        'prenom': person.prenom,
         'activation_link': _ACTIVATION_URL.format(person.token),
     }
     return data
@@ -44,7 +44,7 @@ def _send_mail(person, subject, data, template_name):
 
 def prepare_newsletter(person, newsletter):
     data = {
-        'corps': newsletter.corps.format(nom=person.nom),
+        'corps': newsletter.corps.format(prenom=person.prenom),
         'read_track_url': _READ_URL.format(person.pk, newsletter.pk),
         'unsubscribe_url': _UNSUBSCRIBE_URL.format(person.token),
         'change_info_url': _EDIT_URL.format(person.token)

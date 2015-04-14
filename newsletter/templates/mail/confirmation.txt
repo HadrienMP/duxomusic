@@ -1,4 +1,4 @@
-Salut {{ nom }} !
+Salut {{ prenom }} !
 
 Je t'envoies ce mail car tu t'es inscris à ma newsletter sur duxomusic.com.
 

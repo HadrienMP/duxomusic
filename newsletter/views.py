@@ -32,7 +32,7 @@ def subscribe(request):
             send_confirmation_mail(person)
 
             nm_msgs.success(request,
-                            message=u"Merci pour ton inscription " + person.nom + " !",
+                            message=u"Merci pour ton inscription " + person.prenom + " !",
                             namespace="newsletter")
 
         else:
@@ -162,7 +162,7 @@ def mass_import(request):
                 if Person.objects.filter(email=row['email']).count() == 0:
                     person = Person()
                     person.email = row['email']
-                    person.nom = row['name']
+                    person.prenom = row['name']
                     person.date_creation = datetime.datetime.strptime(row['sign_up'], "%Y-%m-%d %H:%M:%S")
                     person.active = True
                     to_create.append(person)

@@ -10,7 +10,7 @@ class Person(models.Model):
     """A person in the mailing list (a subscriber)"""
 
     email = models.EmailField(max_length=254, unique=True)
-    nom = models.CharField(max_length=255)
+    prenom = models.CharField(max_length=255)
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)
     date_desinscription = models.DateTimeField(blank=True, null=True)
@@ -19,7 +19,7 @@ class Person(models.Model):
     token = UUIDField(auto=True)
 
     def __unicode__(self):
-        return '{0} : {1}'.format(self.nom, self.email)
+        return '{0} : {1}'.format(self.prenom, self.email)
 
     class Meta:
         verbose_name = _('personne')

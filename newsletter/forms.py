@@ -8,10 +8,10 @@ from .models import Person
 class NewsletterForm(ModelForm):
     class Meta:
         model = Person
-        fields = ['email', 'nom']
+        fields = ['email', 'prenom']
         widgets = {
             'email': EmailInput(attrs={'placeholder': 'Email', 'required': True}),
-            'nom': TextInput(attrs={'placeholder': 'Nom', 'required': True})
+            'prenom': TextInput(attrs={'placeholder': 'Prénom', 'required': True})
         }
 
 
