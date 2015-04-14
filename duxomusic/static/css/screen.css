@@ -537,8 +537,9 @@ body #sb-site h1.title-divider {
   font-size: 1.4em;
   text-align: center;
   text-shadow: rgba(255, 255, 255, 0.9) 0 0 10px, rgba(0, 0, 0, 0.85) 2px 2px 2px;
+  margin: 40px 0 20px;
 }
-/* line 7, ../sass/title_divider/_title_divider.scss */
+/* line 8, ../sass/title_divider/_title_divider.scss */
 body #sb-site h1.title-divider:before, body #sb-site h1.title-divider:after {
   content: "";
   display: block;
