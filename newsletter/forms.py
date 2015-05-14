@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-from django.forms import ModelForm, TextInput, EmailInput, Form, IntegerField, FileField, ValidationError, CharField
 import os
 
-from .models import Person
+from django.forms import ModelForm, TextInput, EmailInput, Form, IntegerField, FileField, ValidationError, CharField
+
+from newsletter.models import Person
 
 
 class NewsletterForm(ModelForm):

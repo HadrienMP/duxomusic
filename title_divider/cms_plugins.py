@@ -1,13 +1,11 @@
+from django.utils.translation import ugettext_lazy as _
+
 from cms.plugin_base import CMSPluginBase
-from cmsplugin_cascade.plugin_base import CascadePluginBase
-from cms.plugin_pool import plugin_pool 
-from cms.models.pluginmodel import CMSPlugin 
-from django.utils.translation import ugettext_lazy as _ 
-from django.contrib import admin
-from .models import *
+from cms.plugin_pool import plugin_pool
+from title_divider.models import *
 
 
-class TitleDividerPlugin(CMSPluginBase): 
+class TitleDividerPlugin(CMSPluginBase):
     model = TitleDivider
     module = _("HadrienMP")
     name = _('Title Divider')

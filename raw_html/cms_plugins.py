@@ -1,9 +1,11 @@
+from django.utils.translation import ugettext_lazy as _
+
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
-from django.utils.translation import ugettext_lazy as _
-from .models import *
+from raw_html.models import *
 
-class RawHtmlPlugin(CMSPluginBase): 
+
+class RawHtmlPlugin(CMSPluginBase):
     model = RawHtml
     module = _("HadrienMP")
     name = _('Html Brut')

@@ -1,0 +1,20 @@
+@import "compass/reset";
+@import "compass/css3";
+
+@mixin respond-to($medias...) {
+    @if index($medias, handhelds) {
+        @media only screen and (max-width: $break-small) { @content; }
+    }
+    @if index($medias, little-screens) {
+        @media only screen and (min-width: $break-small + 1) and (max-width: $break-medium - 1) { @content; }
+    }
+    @if index($medias, medium-screens) {
+        @media only screen and (min-width: $break-medium + 1) and (max-width: $break-large - 1) { @content; }
+    }
+    @if index($medias, wide-screens) {
+        @media only screen and (min-width: $break-large) { @content; }
+    }
+}
+
+@import "modern-less";
+

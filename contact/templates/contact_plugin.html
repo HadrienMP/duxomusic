@@ -1,5 +1,12 @@
 {% load thumbnail %}
-<section class="block">
+<section class="block contact">
+
+    {% if instance.call_to_action %}
+    <div class="call_to_action">
+        {{ instance.call_to_action | safe }}
+    </div>
+    {% endif %}
+
     <ul class="contact">
         {% for contact in instance.items.all %}
         <li>

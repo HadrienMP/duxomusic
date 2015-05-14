@@ -6,12 +6,11 @@ import csv
 from django.http import HttpResponseRedirect
 from django.shortcuts import HttpResponse, render
 from django.contrib.auth.decorators import login_required
-from django.utils import timezone
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 
 from .forms import *
-from .service import *
+from newsletter.service import *
 import nm_msgs
 
 
