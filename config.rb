@@ -3,10 +3,10 @@ require 'compass/import-once/activate'
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "duxomusic/static/css"
-sass_dir = "duxomusic/static/sass"
-images_dir = "duxomusic/static/img"
-javascripts_dir = "duxomusic/static/js"
+css_dir = "dux4/static/css"
+sass_dir = "dux4/static/sass"
+images_dir = "dux4/static/img"
+javascripts_dir = "dux4/static/js"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

@@ -2,8 +2,15 @@ $item-margin: 2%;
 $item-margin-top: 4px;
 
 .contact {
+    .call_to_action {
+        padding: 20px;
+        p:first-child {margin: 0;}
+    }
+}
+
+.contact ul {
   text-align: center;
-  padding: 15px 0;
+  padding: 0 0 15px;
 
   li {
     display: inline-block;

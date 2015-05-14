@@ -1,0 +1,36 @@
+/* line 2, ../sass/header.scss */
+header h1 {
+  padding-top: 10px;
+  height: 95px;
+  text-indent: -5000px;
+  background: url(../img/logo.png) no-repeat center center;
+}
+/* line 8, ../sass/header.scss */
+header nav {
+  display: table;
+  margin: 20px 0 10px;
+  width: 100%;
+}
+/* line 13, ../sass/header.scss */
+header nav ul {
+  display: table-row;
+}
+/* line 15, ../sass/header.scss */
+header nav ul li {
+  display: table-cell;
+  width: 16.66%;
+}
+/* line 18, ../sass/header.scss */
+header nav ul li a {
+  background-color: #041833;
+  padding: 8px 0;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* line 24, ../sass/header.scss */
+header nav ul li a:hover {
+  text-shadow: 0px 0px 5px #ffffff;
+  background-color: #1363B8;
+  box-shadow: 0px 0px 10px rgba(19, 99, 184, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
+}

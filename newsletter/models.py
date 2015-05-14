@@ -1,9 +1,9 @@
-import datetime
-
 from django.db import models
-from cms.models.pluginmodel import CMSPlugin
 from uuidfield import UUIDField
 from django.utils.translation import ugettext_lazy as _
+from django.utils import timezone
+
+from cms.models.pluginmodel import CMSPlugin
 
 
 class Person(models.Model):
@@ -47,7 +47,7 @@ class Mail(models.Model):
     corps = models.TextField()
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)
-    date_envoi = models.DateTimeField(default=datetime.datetime.now)
+    date_envoi = models.DateTimeField(default=timezone.now)
     draft = models.BooleanField(default=True)
     sent = models.BooleanField(default=False)
 

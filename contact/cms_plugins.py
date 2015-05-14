@@ -1,10 +1,9 @@
-from cms.plugin_base import CMSPluginBase
-from cmsplugin_cascade.plugin_base import CascadePluginBase
-from cms.plugin_pool import plugin_pool 
-from cms.models.pluginmodel import CMSPlugin 
-from django.utils.translation import ugettext_lazy as _ 
+from django.utils.translation import ugettext_lazy as _
 from django.contrib import admin
-from .models import *
+
+from cms.plugin_base import CMSPluginBase
+from cms.plugin_pool import plugin_pool
+from contact.models import *
 
 
 class ContactItemAdmin(admin.TabularInline):

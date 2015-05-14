@@ -1,11 +1,15 @@
 # -*- coding:utf-8 -*-
 from django.db import models
+
 from cms.models.pluginmodel import CMSPlugin
 from filer.fields.image import FilerImageField
 from colorfield.fields import ColorField
+from djangocms_text_ckeditor.fields import HTMLField
 
 
 class Contact(CMSPlugin):
+    call_to_action = HTMLField(blank=True)
+
     def copy_relations(self, oldinstance):
         for item in oldinstance.items.all():
             # instance.pk = None; instance.pk.save() is the slightly odd but 

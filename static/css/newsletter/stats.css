@@ -1,0 +1,117 @@
+@import url(//fonts.googleapis.com/css?family=Oswald:400);
+/* line 4, ../../sass/newsletter/stats.scss */
+body {
+  background: #222428;
+  font-family: "Oswald", sans-serif;
+  padding: 20px 0;
+  color: #eee;
+  text-align: center;
+}
+/* line 11, ../../sass/newsletter/stats.scss */
+body h1 {
+  margin: 40px 0 30px;
+  text-transform: uppercase;
+  font-size: 2em;
+  text-shadow: 0 -1px 0 #888;
+}
+/* line 18, ../../sass/newsletter/stats.scss */
+body .percent {
+  font-size: 2em;
+}
+/* line 20, ../../sass/newsletter/stats.scss */
+body .percent .percent-label, body .percent .percent-value {
+  display: inline-block;
+  padding: 10px;
+  margin-bottom: 0;
+}
+/* line 29, ../../sass/newsletter/stats.scss */
+body .percent .percent-label {
+  -moz-border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px 0 0 5px;
+  width: 100px;
+}
+/* line 33, ../../sass/newsletter/stats.scss */
+body .percent .percent-label i {
+  position: relative;
+  top: -3px;
+}
+/* line 35, ../../sass/newsletter/stats.scss */
+body .percent .percent-value {
+  background: #ccc;
+  -moz-border-radius: 0 5px 5px 0;
+  -webkit-border-radius: 0;
+  border-radius: 0 5px 5px 0;
+  color: #333;
+  width: 200px;
+}
+/* line 42, ../../sass/newsletter/stats.scss */
+body .percent.average {
+  font-size: 1.5em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+}
+/* line 46, ../../sass/newsletter/stats.scss */
+body .percent.average .percent-label, body .percent.average .percent-value {
+  border: 1px solid #888;
+  padding: 5px;
+}
+/* line 50, ../../sass/newsletter/stats.scss */
+body .percent.average .percent-label {
+  width: 70px;
+  -moz-border-radius: 0 0 0 5px;
+  -webkit-border-radius: 0;
+  border-radius: 0 0 0 5px;
+  background: #333;
+}
+/* line 55, ../../sass/newsletter/stats.scss */
+body .percent.average .percent-value {
+  width: 170px;
+  -moz-border-radius: 0 0 5px 0;
+  -webkit-border-radius: 0;
+  border-radius: 0 0 5px 0;
+  border-left: none;
+}
+
+/* line 64, ../../sass/newsletter/stats.scss */
+form {
+  width: 100%;
+  max-width: 500px;
+  text-align: justify;
+  margin: 40px auto 20px;
+  padding: 0 10px;
+}
+/* line 71, ../../sass/newsletter/stats.scss */
+form input[type="file"] {
+  display: inline-block !important;
+}
+/* line 72, ../../sass/newsletter/stats.scss */
+form label {
+  width: 20%;
+}
+/* line 73, ../../sass/newsletter/stats.scss */
+form input {
+  width: 79%;
+}
+/* line 74, ../../sass/newsletter/stats.scss */
+form .help-block {
+  margin-left: 20%;
+}
+/* line 77, ../../sass/newsletter/stats.scss */
+form .help-block ul {
+  padding: 0;
+}
+/* line 80, ../../sass/newsletter/stats.scss */
+form .help-block ul li {
+  list-style-type: none;
+}
+/* line 85, ../../sass/newsletter/stats.scss */
+form button[type="submit"] {
+  width: 100%;
+  margin-top: 20px;
+}
+/* line 88, ../../sass/newsletter/stats.scss */
+form button[type="submit"] i {
+  margin-left: -10px;
+  margin-right: 5px;
+}

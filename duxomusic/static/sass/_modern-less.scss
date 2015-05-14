@@ -4,9 +4,9 @@ html, body, #sb-site {height: 100%;}
 
 body {
 
-  color: $color;
-  font-family: $font, Arial, sans-serif;
-  font-weight: bold;
+    color: $color;
+    font-family: $font, Arial, sans-serif;
+    font-weight: bold;
 
 
     #sb-site {
@@ -150,6 +150,8 @@ body {
                 .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12,
                 .col-sm-12, .col-md-12, .col-lg-12 { padding-left: 8px; padding-right: 8px; }
             }
+
+            .row {margin: 40px 0;}
         }
         .sb-slidebar {
             li a {
@@ -189,6 +191,13 @@ body {
           background: $black-back;
           //background: #F5F5F5;
           @include border-radius(3px);
+          //@include box-shadow(0 0 5px rgba(100, 100, 100, 0.7));
+        }
+
+        p {
+            margin: 15px 0;
+            line-height: 1.2em;
+            text-align: justify;
         }
 
         .errorlist {color: $error-color;}
@@ -197,5 +206,6 @@ body {
         @import "newsletter/newsletter";
         @import "newsletter/app";
         @import "title_divider/title_divider";
+        @import "dux_news/dux_news";
     }
 }

@@ -5,7 +5,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
 from django.template.loader import render_to_string
 
-from .models import *
+from newsletter.models import *
 
 
 _SENDER = settings.DEFAULT_FROM_EMAIL

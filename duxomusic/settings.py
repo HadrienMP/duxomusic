@@ -1,79 +1,76 @@
-# -*- coding:utf-8 -*-
-# Django settings for unit test project.
 import os
 
+gettext = lambda s: s
+DATA_DIR = os.path.dirname(os.path.dirname(__file__))
+"""
+Django settings for duxomusic project.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/1.7/topics/settings/
+
+For the full list of settings and their values, see
+https://docs.djangoproject.com/en/1.7/ref/settings/
+"""
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '-m!w^acfl0747a7z1dyqyh4gbh*qdplcr_lofo8jwka(2pe6ei'
+
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DEBUG', False))
 
-PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
+TEMPLATE_DEBUG = bool(os.environ.get('DEBUG', False))
 
-SITE_ID = 1
-
-ROOT_URLCONF = 'duxomusic.urls'
+ALLOWED_HOSTS = ['dux2.hadrienmp.fr']
 
 BASE_URL = os.environ['BASE_URL']
 
-SECRET_KEY = os.urandom(24).encode("hex")
 
-ALLOWED_HOSTS = [
-    'duxomusic.com',
-    'duxomusic.fr',
-]
+# Application definition
+ROOT_URLCONF = 'duxomusic.urls'
 
-import django
+WSGI_APPLICATION = 'duxomusic.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': os.environ.get('DATABASE_ENGINE', 'django.db.backends.sqlite3'),
-        'NAME': os.environ.get('DATABASE_NAME', 'duxomusic.db'),
-        'USER': os.environ.get('DATABASE_USER', ''),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-    },
-}
+# Internationalization
+# https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-from cms import __version__ as CMS_VERSION
+LANGUAGE_CODE = 'fr'
 
-CMS_VERSION = tuple(int(n) for n in CMS_VERSION.split('.')[:2])
+TIME_ZONE = 'Europe/Paris'
 
-INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'djangocms_admin_style',
-    'django.contrib.messages',
-    'django.contrib.admin',
-    'django.contrib.staticfiles',
-    'django.contrib.sitemaps',
-    'djangocms_text_ckeditor',
-    'django_select2',
-    'cmsplugin_cascade',
-    'cmsplugin_cascade.extra_fields',
-    'cmsplugin_cascade.sharable',
-    'cms',
-    'cms_bootstrap3',
-    'menus',
-    CMS_VERSION >= (3, 1) and 'treebeard' or 'mptt',
-    'filer',
-    'easy_thumbnails',
-    'sekizai',
-    'duxomusic',
-    'contact',
-    'raw_html',
-    'newsletter',
-    'colorfield',
-    'title_divider',
-    'newsletter',
-    'nm_msgs',
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = True
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.7/howto/static-files/
+
+MEDIA_ROOT = os.environ.get('MEDIA_ROOT', os.path.join(DATA_DIR, 'media'))
+MEDIA_URL = os.environ.get('MEDIA_URL', '/media/')
+STATIC_ROOT = os.environ.get('STATIC_ROOT', os.path.join(DATA_DIR, 'static'))
+STATIC_URL = os.environ.get('STATIC_URL', '/static/')
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'duxomusic', 'static'),
 )
-if django.VERSION[:2] > (1, 6):
-    MIGRATION_MODULES = {
-        'cms': 'cms.migrations_django',
-        'menus': 'menus.migrations_django',
-        'djangocms_text_ckeditor': 'djangocms_text_ckeditor.migrations_django',
-        'cmsplugin_cascade': 'cmsplugin_cascade.migrations',
-    }
-else:
-    INSTALLED_APPS += ('south',)
+SITE_ID = 1
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    'django.template.loaders.eggs.Loader'
+)
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -81,85 +78,156 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'django.middleware.doc.XViewMiddleware',
+    'django.contrib.admindocs.middleware.XViewMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.gzip.GZipMiddleware',
-    'cms.middleware.page.CurrentPageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware',
-)
-
-WSGI_APPLICATION = 'duxomusic.wsgi.application'
-
-# Absolute path to the directory that holds media.
-MEDIA_ROOT = os.environ.get('MEDIA_ROOT', os.path.join(PROJECT_DIR, 'media'))
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a trailing slash.
-MEDIA_URL = os.environ.get('MEDIA_URL', '/media/')
-
-# Absolute path to the directory that holds static files.
-STATIC_ROOT = os.environ.get('STATIC_ROOT', os.path.join(PROJECT_DIR, 'static'))
-
-# URL that handles the static files served from STATIC_ROOT. Make sure to use a trailing slash.
-STATIC_URL = os.environ.get('STATIC_URL', '/static/')
-
-STATICFILES_DIRS = (
-    os.path.abspath(os.path.join(PROJECT_DIR, os.pardir, 'bower_components')),
-)
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'cms.middleware.language.LanguageCookieMiddleware'
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.core.context_processors.tz',
-    'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
-    'cms.context_processors.cms_settings',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.request',
+    'django.core.context_processors.media',
+    'django.core.context_processors.csrf',
+    'django.core.context_processors.tz',
     'sekizai.context_processors.sekizai',
-)
-
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
+    'django.core.context_processors.static',
+    'cms.context_processors.cms_settings',
+    'aldryn_boilerplates.context_processors.boilerplate',
 )
 
 TEMPLATE_DIRS = (
-    # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_DIR, 'templates'),
+    os.path.join(BASE_DIR, 'duxomusic', 'templates'),
 )
 
-# If you set this to False, Django will make some optimizations so as not
-# to load the internationalization machinery.
-USE_I18N = True
+INSTALLED_APPS = (
 
-# If you set this to False, Django will not format dates, numbers and
-# calendars according to the current locale.
-USE_L10N = True
+    # Django cms
+    'djangocms_admin_style',
+    'djangocms_text_ckeditor',
 
-# If you set this to False, Django will not use timezone-aware datetimes.
-USE_TZ = True
+    # Core
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sitemaps',
+    'django.contrib.staticfiles',
+    'django.contrib.messages',
+    'django.contrib.sites',
+    'django.contrib.admin',
 
-LANGUAGE_CODE = 'fr'
+    # Django cms
+    'cms',
+    'mptt',
+    'menus',
+    'sekizai',
+    'treebeard',
+    'reversion',
+
+    # Filer
+    'filer',
+    'easy_thumbnails',
+
+    # Colorfield
+    'colorfield',
+
+    # Aldryn Bootstrap
+    'aldryn_bootstrap3',
+
+    # Django robots
+    'robots',
+
+    # Nephila blog
+    'cmsplugin_filer_image',
+    'parler',
+    'taggit',
+    'taggit_autosuggest',
+    'django_select2',
+    'meta',
+    'meta_mixin',
+    'admin_enhancer',
+    'djangocms_blog',
+
+    # Custom
+    'duxomusic',
+    'contact',
+    'raw_html',
+    'newsletter',
+    'title_divider',
+    'nm_msgs',
+    'dux_news',
+)
+
 LANGUAGES = (
-    ('fr', 'French'),
+    ## Customize this
+    ('fr', gettext('fr')),
 )
+
+CMS_LANGUAGES = {
+    ## Customize this
+    'default': {
+        'public': True,
+        'hide_untranslated': False,
+        'redirect_on_fallback': True,
+    },
+    1: [
+        {
+            'public': True,
+            'code': 'fr',
+            'hide_untranslated': False,
+            'name': gettext('fr'),
+            'redirect_on_fallback': True,
+        },
+    ],
+}
+
+CMS_TEMPLATES = (
+    ## Customize this
+    ('fullwidth.html', 'Fullwidth'),
+    ('sidebar_left.html', 'Sidebar Left'),
+    ('sidebar_right.html', 'Sidebar Right')
+)
+
+CMS_PERMISSION = True
+
+CMS_PLACEHOLDER_CONF = {}
+
+CMS_SEO_FIELDS = True
+
+# Database
+# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': os.environ.get('DATABASE_ENGINE', 'django.db.backends.sqlite3'),
+        'NAME': os.environ.get('DATABASE_NAME', os.path.join(BASE_DIR, 'db.sqlite')),
+        'USER': os.environ.get('DATABASE_USER', ''),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', ''),
+        'HOST': os.environ.get('DATABASE_HOST', ''),
+        'PORT': os.environ.get('DATABASE_PORT', ''),
+    }
+}
+
+MIGRATION_MODULES = {
+    'aldryn_bootstrap3': 'aldryn_bootstrap3.migrations_django',
+    'menus': 'menus.migrations_django',
+    'filer': 'filer.migrations_django',
+    'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
+}
+
+# Session for nm_msgs
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'  # class to serialize session data
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
-#############################################################
-#
 # Mail configuration
-#
-#############################################################
+
 EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', True)
 EMAIL_HOST = os.environ.get('EMAIL_HOST', "")
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', "")
@@ -167,72 +235,11 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', "")
 EMAIL_PORT = os.environ.get('EMAIL_PORT', 587)
 DEFAULT_FROM_EMAIL = "Dux'O <duxo@duxomusic.com>"
 
-#############################################################
-#
-# Application specific settings
-#
-#############################################################
+# EASY THUMBNAILS + Filer
 
-CMS_TEMPLATES = (
-    ('main.html', 'Main Content Container'),
-    ('wrapped.html', 'Wrapped Bootstrap Column'),
-)
+FILER_DEBUG = True
 
-CMS_SEO_FIELDS = True
-
-CMS_CACHE_DURATIONS = {
-    'content': 3600,
-    'menus': 3600,
-    'permissions': 86400,
-}
-
-CMS_PLACEHOLDER_CONF = {
-    'Main Content Container': {
-        'plugins': ['BootstrapContainerPlugin'],
-    },
-}
-
-CMSPLUGIN_CASCADE_PLUGINS = ('cmsplugin_cascade.link', 'cmsplugin_cascade.bootstrap3',)
-
-CMSPLUGIN_CASCADE_WITH_EXTRAFIELDS = [
-    'BootstrapButtonPlugin', 'BootstrapContainerPlugin',
-    'BootstrapColumnPlugin', 'BootstrapRowPlugin', 'BootstrapPicturePlugin',
-    'SimpleWrapperPlugin',
-]
-
-CMSPLUGIN_CASCADE_WITH_SHARABLES = {
-    'BootstrapImagePlugin': (
-    'image-shapes', 'image-width-responsive', 'image-width-fixed', 'image-height', 'resize-options',),
-    'BootstrapPicturePlugin': ('image-shapes', 'responsive-heights', 'image-size', 'resize-options',),
-    'BootstrapButtonPlugin': ('link',),
-    'TextLinkPlugin': ('link', 'target',),
-}
-
-CMSPLUGIN_CASCADE_LEAF_PLUGINS = (
-    'TextLinkPlugin',
-    'ContactPlugin',
-    'RawHtmlPlugin',
-    'TitleDividerPlugin',
-    'NewsletterPlugin',
-)
-
-COLUMN_GLOSSARY = {
-    'breakpoints': ['xs', 'sm', 'md', 'lg'],
-    'container_max_widths': {'xs': 750, 'sm': 750, 'md': 970, 'lg': 1170},
-    'fluid': False,
-    'media_queries': {
-        'xs': ['(max-width: 768px)'],
-        'sm': ['(min-width: 768px)', '(max-width: 992px)'],
-        'md': ['(min-width: 992px)', '(max-width: 1200px)'],
-        'lg': ['(min-width: 1200px)'],
-    },
-}
-
-CKEDITOR_SETTINGS = {
-    'language': '{{ language }}',
-    'skin': 'moono',
-    'toolbar': 'CMS',
-}
+FILER_ENABLE_LOGGING = True
 
 FILER_ALLOW_REGULAR_USERS_TO_ADD_ROOT_FOLDERS = True
 
@@ -256,4 +263,15 @@ THUMBNAIL_OPTIMIZE_COMMAND = {
     'jpeg': '/opt/local/bin/jpegoptim {filename}',
 }
 
-# THUMBNAIL_DEBUG = True
+THUMBNAIL_DEBUG = True
+
+# Nephila Blog
+
+PARLER_LANGUAGES = {
+    1: (
+        {'code': 'fr', },
+    ),
+}
+
+META_SITE_PROTOCOL = os.environ.get('META_SITE_PROTOCOL', 'http')
+META_SITE_DOMAIN = ALLOWED_HOSTS[0]

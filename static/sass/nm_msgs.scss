@@ -1,0 +1,26 @@
+ul.success {
+    color: green;
+    position: relative;
+
+    li {
+        margin-left: 2em;
+        text-align: justify;
+
+        &:before {
+            content: '\F14A';
+            position: absolute;
+            left: 0;
+            font-family: FontAwesome;
+        }
+    }
+}
+
+ul.error, ul.errorlist {
+    color: red;
+
+    p ~ & {
+        margin-top: 17px;
+    }
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
