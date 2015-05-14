@@ -22,14 +22,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-m!w^acfl0747a7z1dyqyh4gbh*qdplcr_lofo8jwka(2pe6ei'
+SECRET_KEY = os.urandom(24).encode("hex")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DEBUG', False))
 
 TEMPLATE_DEBUG = bool(os.environ.get('DEBUG', False))
 
-ALLOWED_HOSTS = ['dux2.hadrienmp.fr']
+ALLOWED_HOSTS = ['duxomusic.com', 'duxomusic.fr', 'www.duxomusic.com', 'www.duxomusic.fr', 'dux2.hadrienmp.fr']
 
 BASE_URL = os.environ['BASE_URL']
 
