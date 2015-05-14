@@ -344,7 +344,7 @@ body #sb-site .contact .call_to_action p:first-child {
 /* line 11, ../sass/contact/_contact.scss */
 body #sb-site .contact ul {
   text-align: center;
-  padding: 0 0 15px;
+  padding: 15px 0 15px;
 }
 /* line 15, ../sass/contact/_contact.scss */
 body #sb-site .contact ul li {
