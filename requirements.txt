@@ -1,15 +1,8 @@
 Django==1.7.8
 Django-Select2==4.3.1
-Flask==0.10.1
-Flask-Login==0.2.11
-Flask-SQLAlchemy==2.0
-Jinja2==2.7.3
-MarkupSafe==0.23
 Pillow==2.3.0
-SQLAlchemy==0.9.7
 South==1.0.2
 Unidecode==0.04.17
-Werkzeug==0.9.6
 YURL==0.13
 aldryn-boilerplates==0.7
 aldryn-bootstrap3==0.4.5

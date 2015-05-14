@@ -12,9 +12,10 @@ $(function() {
 
     $frame.each(function() {
         var $p = $(this).find('p');
-        $p.css('position', 'absolute')
-            .css('top', ($(this).innerHeight() - $p.height()) / 2 )
-            .css('left', ($(this).innerWidth() - $p.width()) / 2)
-            .css('margin-top', '0');
+        $p.css('top', ($(this).innerHeight() - $p.innerHeight()) / 2 )
+            .css('left', ($(this).innerWidth() - $p.innerWidth()) / 2)
+            .css('width', $p.innerWidth())
+            .css('margin-top', '0')
+            .css('position', 'absolute');
     });
 });

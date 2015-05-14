@@ -215,10 +215,10 @@ DATABASES = {
 }
 
 MIGRATION_MODULES = {
-    'aldryn_bootstrap3': 'aldryn_bootstrap3.migrations_django',
     'menus': 'menus.migrations_django',
     'filer': 'filer.migrations_django',
     'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
+    'aldryn_bootstrap3': 'aldryn_bootstrap3.migrations_django',
 }
 
 # Session for nm_msgs
