@@ -318,7 +318,7 @@ body #sb-site a:hover {
 }
 /* line 190, ../sass/_modern-less.scss */
 body #sb-site section.block {
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(15, 15, 15, 0.8);
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -512,7 +512,7 @@ body #sb-site .newsletter.block .success_message p:first-child {
 body #sb-site .newsletter-app {
   text-align: center;
   padding: 10px;
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(15, 15, 15, 0.8);
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
