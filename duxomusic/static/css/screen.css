@@ -552,7 +552,7 @@ body #sb-site .newsletter-app article h1 {
   font-weight: bold;
 }
 /* line 1, ../sass/title_divider/_title_divider.scss */
-body #sb-site h1.title-divider {
+body #sb-site h2.title-divider {
   font-family: "Cinzel Decorative", cursive;
   font-size: 1.4em;
   text-align: center;
@@ -560,7 +560,7 @@ body #sb-site h1.title-divider {
   margin: 40px 0 20px;
 }
 /* line 8, ../sass/title_divider/_title_divider.scss */
-body #sb-site h1.title-divider:before, body #sb-site h1.title-divider:after {
+body #sb-site h2.title-divider:before, body #sb-site h2.title-divider:after {
   content: "";
   display: block;
   width: 10%;
@@ -582,4 +582,19 @@ body #sb-site section.sound .under-sound {
 body #sb-site section.sound .under-sound .show-disqus {
   margin-top: 20px;
   display: block;
+}
+/* line 1, ../sass/biography/_biography.scss */
+body #sb-site .biography {
+  height: 150px;
+}
+/* line 3, ../sass/biography/_biography.scss */
+body #sb-site .biography img {
+  float: left;
+  -moz-border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px 0 0 5px;
+}
+/* line 7, ../sass/biography/_biography.scss */
+body #sb-site .biography .description {
+  padding: 10px 20px 10px 170px;
 }

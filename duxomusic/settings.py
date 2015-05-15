@@ -162,6 +162,7 @@ INSTALLED_APPS = (
     'title_divider',
     'nm_msgs',
     'dux_news',
+    'biography',
 )
 
 LANGUAGES = (

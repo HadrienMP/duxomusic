@@ -1,0 +1,9 @@
+{% load thumbnail %}
+<section class="block biography">
+    {% thumbnail instance.photo 150x150 crop upscale as thumb %}
+    <img src="{{ thumb.url }}" alt="Photo de Dux'O"/>
+
+    <div class="description">
+        {{ instance.description | safe }}
+    </div>
+</section>
