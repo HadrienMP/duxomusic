@@ -19,7 +19,7 @@
                     <div class="front" style="background: #{{ contact.bgcolor }}">
                         {% if contact.icon %}
                         {% thumbnail contact.icon 100x100 upscale as thumb %}
-                        <img src="{{ thumb.url }}" title="{{ contact.title }}" />
+                        <img src="{{ thumb.url }}" title="{{ contact.title }}" alt="{{ contact.title }}"/>
                         {% else %}
                         <i class="fa {{ contact.fa }}"></i>
                         {% endif %}
