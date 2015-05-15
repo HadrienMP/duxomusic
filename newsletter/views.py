@@ -2,9 +2,11 @@
 from __future__ import division
 
 import csv
+import datetime
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import HttpResponse, render
+
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
@@ -15,8 +17,6 @@ import nm_msgs
 
 
 _NEWSLETTER_DIR = os.path.abspath(os.path.dirname(__file__))
-_SENDER = settings.DEFAULT_FROM_EMAIL
-_READ_URL = settings.BASE_URL + '/newsletter/read?person_id={0}&amp;mail_id={1}'
 
 
 def subscribe(request):

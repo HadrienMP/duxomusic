@@ -27,7 +27,8 @@
     {% endif %}
 
     {% if form %}
-    <form class="ajax" action="{% if action %}{{ action }}{% else %}/newsletter/subscribe{% endif %}" method="post">
+    <form class="ajax" action="{% if action %}{{ action }}{% else %}{% url 'newsletter:subscribe' %}{% endif %}"
+          method="post">
         {% csrf_token %}
         <input type="hidden" name="type" value="newsletter"/>
         {{ form.as_p }}

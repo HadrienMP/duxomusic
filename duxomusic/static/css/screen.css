@@ -488,21 +488,23 @@ body #sb-site .newsletter.block .success_message .icon {
   font-size: 4em;
   padding: 5px 0px 10px;
   background: #0067d6;
+  text-align: center;
 }
-/* line 62, ../sass/newsletter/_newsletter.scss */
+/* line 63, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block .success_message .icon + p {
   margin: 30px 0 30px !important;
 }
-/* line 64, ../sass/newsletter/_newsletter.scss */
+/* line 65, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block .success_message p strong {
   font-weight: bold;
   font-size: 1.5em;
 }
-/* line 65, ../sass/newsletter/_newsletter.scss */
+/* line 66, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block .success_message p {
   margin-top: 20px;
+  text-align: center;
 }
-/* line 67, ../sass/newsletter/_newsletter.scss */
+/* line 69, ../sass/newsletter/_newsletter.scss */
 body #sb-site .newsletter.block .success_message p:first-child {
   margin-top: 0;
 }

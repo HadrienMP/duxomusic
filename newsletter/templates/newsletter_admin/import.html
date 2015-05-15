@@ -21,7 +21,7 @@
 {% endfor %}
 {% endif %}
 
-<form action="/newsletter/import" method="post" role="form"
+<form action="{% url 'newsletter:import' %}" method="post" role="form"
       {% if form.is_multipart %}enctype="multipart/form-data" {% endif %}>
     {% csrf_token %}
 

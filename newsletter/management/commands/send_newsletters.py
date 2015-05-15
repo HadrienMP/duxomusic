@@ -5,10 +5,6 @@ from django.utils import timezone
 from newsletter.service import *
 
 
-_SENDER = settings.DEFAULT_FROM_EMAIL
-_READ_URL = settings.BASE_URL + '/newsletter/read?person_id={0}&amp;mail_id={1}'
-
-
 class Command(BaseCommand):
     help = 'Sends all the newsletters that are supposed to be sent'
 

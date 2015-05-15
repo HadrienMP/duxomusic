@@ -4,15 +4,12 @@ from django.core import mail
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
 from django.template.loader import render_to_string
+from django.core.urlresolvers import reverse
 
 from newsletter.models import *
 
 
 _SENDER = settings.DEFAULT_FROM_EMAIL
-_READ_URL = settings.BASE_URL + '/newsletter/read?person_id={0}&amp;mail_id={1}'
-_ACTIVATION_URL = settings.BASE_URL + '/newsletter/user/activate?token={0}'
-_UNSUBSCRIBE_URL = settings.BASE_URL + '/newsletter/user/unsubscribe?token={0}'
-_EDIT_URL = settings.BASE_URL + '/newsletter/user/edit?token={0}'
 
 
 def send_confirmation_mail(person):
@@ -26,7 +23,7 @@ def send_confirmation_mail(person):
 def _confirmation_mail_data(person):
     data = {
         'prenom': person.prenom,
-        'activation_link': _ACTIVATION_URL.format(person.token),
+        'activation_link': settings.BASE_URL + reverse('newsletter:activate') + '?token={0}'.format(person.token),
     }
     return data
 
@@ -45,9 +42,10 @@ def _send_mail(person, subject, data, template_name):
 def prepare_newsletter(person, newsletter):
     data = {
         'corps': newsletter.corps.format(prenom=person.prenom),
-        'read_track_url': _READ_URL.format(person.pk, newsletter.pk),
-        'unsubscribe_url': _UNSUBSCRIBE_URL.format(person.token),
-        'change_info_url': _EDIT_URL.format(person.token)
+        'read_track_url': settings.BASE_URL + reverse('newsletter:read') + '?person_id={0}&amp;mail_id={1}'.format(
+            person.pk, newsletter.pk),
+        'unsubscribe_url': settings.BASE_URL + reverse('newsletter:unsubscribe') + '?token={0}'.format(person.token),
+        'change_info_url': settings.BASE_URL + reverse('newsletter:edit') + '?token={0}'.format(person.token)
     }
     text_content = render_to_string('mail/newsletter.txt', data)
     html_content = render_to_string('mail/newsletter.html', data)
