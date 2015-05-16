@@ -1,4 +1,4 @@
-section.sound {
+.sound {
     .under-sound {
         margin: 20px;
         margin-bottom: 0;
@@ -7,6 +7,12 @@ section.sound {
         .show-disqus {
             margin-top: 20px;
             display: block;
+        }
+
+        .meta {
+            color: #aaa;
+            margin: 35px 0 15px;
+            font-size: 0.9em;
         }
     }
 }

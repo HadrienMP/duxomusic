@@ -1,8 +1,19 @@
-<section class="block sound">
+<article class="block sound">
     {{ instance.sound.sound | safe }}
 
     <div class="under-sound">
+
         {{ instance.sound.description | safe }}
+
+        <div class="meta">
+            {{ instance.sound.date_publication | date:"l j F Y" | capfirst }}
+            {% if instance.sound.tags.all %}
+            - Tags :
+            {% for tag in instance.sound.tags.all %}
+            {{ tag }}{% if not forloop.last %} /{% endif %}
+            {% endfor %}
+            {% endif %}
+        </div>
 
         <a class="show-disqus" href="#"><i class="fa fa-caret-right"></i>&nbsp;<span>Afficher</span> les
             commentaires</a>
@@ -26,4 +37,4 @@
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
             powered by Disqus.</a></noscript>
     </div>
-</section>
+</article>

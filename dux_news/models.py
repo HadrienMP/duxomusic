@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse
 
 from djangocms_text_ckeditor.fields import HTMLField
 from cms.models.pluginmodel import CMSPlugin
+from taggit_autosuggest.managers import TaggableManager
 
 
 class Sound(models.Model):
@@ -16,6 +17,7 @@ class Sound(models.Model):
     description = HTMLField(blank=True)
     title = models.CharField(max_length=125)
     slug = models.SlugField(unique=True)
+    tags = TaggableManager(blank=True, related_name='dux_news_tags')
 
     def __unicode__(self):
         return '%s' % self.title

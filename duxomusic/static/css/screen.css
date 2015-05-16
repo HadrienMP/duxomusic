@@ -317,7 +317,7 @@ body #sb-site a:hover {
   text-shadow: 0px 0px 10px #47a0ff;
 }
 /* line 190, ../sass/_modern-less.scss */
-body #sb-site section.block {
+body #sb-site .block {
   background: rgba(15, 15, 15, 0.8);
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -575,15 +575,21 @@ body #sb-site h2.title-divider:before, body #sb-site h2.title-divider:after {
   box-shadow: rgba(255, 255, 255, 0.9) 0 0 10px;
 }
 /* line 2, ../sass/dux_news/_dux_news.scss */
-body #sb-site section.sound .under-sound {
+body #sb-site .sound .under-sound {
   margin: 20px;
   margin-bottom: 0;
   padding-bottom: 20px;
 }
 /* line 7, ../sass/dux_news/_dux_news.scss */
-body #sb-site section.sound .under-sound .show-disqus {
+body #sb-site .sound .under-sound .show-disqus {
   margin-top: 20px;
   display: block;
+}
+/* line 12, ../sass/dux_news/_dux_news.scss */
+body #sb-site .sound .under-sound .meta {
+  color: #aaa;
+  margin: 35px 0 15px;
+  font-size: 0.9em;
 }
 /* line 1, ../sass/biography/_biography.scss */
 body #sb-site .biography {
