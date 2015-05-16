@@ -63,6 +63,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+@font-face {
+  font-family: akaPotsley;
+  src: url(../fonts/akaPotsley.ttf);
+}
 /* line 3, ../sass/_modern-less.scss */
 html, body, #sb-site {
   height: 100%;
@@ -71,8 +75,8 @@ html, body, #sb-site {
 /* line 5, ../sass/_modern-less.scss */
 body {
   color: white;
-  font-family: "Poiret One", Arial, sans-serif;
-  font-weight: bold;
+  font-family: "Ubuntu", Arial, sans-serif;
+  font-weight: 300;
 }
 /* line 12, ../sass/_modern-less.scss */
 body #sb-site {
@@ -318,7 +322,7 @@ body #sb-site a:hover {
 }
 /* line 190, ../sass/_modern-less.scss */
 body #sb-site .block {
-  background: rgba(15, 15, 15, 0.8);
+  background: rgba(15, 15, 15, 0.9);
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -462,7 +466,7 @@ body #sb-site .newsletter.block button[type="submit"] {
   padding: 15px 10px;
   background: #0067D6;
   border: none;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 1.3em;
   -moz-transition-property: background, text-shadow;
   -o-transition-property: background, text-shadow;
@@ -512,7 +516,7 @@ body #sb-site .newsletter.block .success_message p:first-child {
 body #sb-site .newsletter-app {
   text-align: center;
   padding: 10px;
-  background: rgba(15, 15, 15, 0.8);
+  background: rgba(15, 15, 15, 0.9);
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -555,13 +559,14 @@ body #sb-site .newsletter-app article h1 {
 }
 /* line 1, ../sass/title_divider/_title_divider.scss */
 body #sb-site h2.title-divider {
-  font-family: "Cinzel Decorative", cursive;
-  font-size: 1.4em;
+  font-family: "akaPotsley", "Mystery Quest", "Palatino Linotype", "Book Antiqua", Palatino, serif, cursive;
+  font-size: 3em;
+  font-weight: normal;
   text-align: center;
-  text-shadow: rgba(255, 255, 255, 0.9) 0 0 10px, rgba(0, 0, 0, 0.85) 2px 2px 2px;
+  text-shadow: rgba(0, 0, 0, 0.85) 2px 2px 0, rgba(255, 255, 255, 0.9) 0 0 10px;
   margin: 40px 0 20px;
 }
-/* line 8, ../sass/title_divider/_title_divider.scss */
+/* line 9, ../sass/title_divider/_title_divider.scss */
 body #sb-site h2.title-divider:before, body #sb-site h2.title-divider:after {
   content: "";
   display: block;

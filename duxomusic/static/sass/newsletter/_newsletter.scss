@@ -39,7 +39,7 @@
     padding: 15px 10px;
     background: #0067D6;
     border: none;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1.3em;
     @include transition-property(background, text-shadow);
     @include transition-duration(0.5s);

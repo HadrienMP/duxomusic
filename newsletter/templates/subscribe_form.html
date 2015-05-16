@@ -23,7 +23,7 @@
     {% else %}
 
     {% if instance.call_to_action %}
-        <p class="call-to-action">{{ instance.call_to_action }}</p>
+    <p class="call-to-action">{{ instance.call_to_action | safe }}</p>
     {% endif %}
 
     {% if form %}

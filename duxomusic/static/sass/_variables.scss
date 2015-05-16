@@ -1,9 +1,14 @@
 $color: white;
-$font: "Poiret One";
+$font: "Ubuntu";
+$title-font: "akaPotsley", "Mystery Quest", "Palatino Linotype", "Book Antiqua", Palatino, serif;
 $link-color: #47a0ff;
 $break-small: 240px;
 $break-medium: 859px;
 $break-large: 1183px;
-$font: "Poiret One";
-$black-back: rgba(15,15,15,0.8);
+$black-back: rgba(15,15,15,0.9);
 $error-color: red;
+
+@font-face {
+    font-family: akaPotsley;
+    src: url(../fonts/akaPotsley.ttf);
+}
