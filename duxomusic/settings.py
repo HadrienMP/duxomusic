@@ -165,6 +165,7 @@ INSTALLED_APPS = (
     'biography',
 )
 
+LANGUAGE_CODE = 'fr'
 LANGUAGES = (
     ## Customize this
     ('fr', gettext('fr')),
