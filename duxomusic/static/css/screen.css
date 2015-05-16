@@ -99,7 +99,7 @@ body #sb-site header h1, body #sb-site header nav {
 }
 /* line 28, ../sass/_modern-less.scss */
 body #sb-site header h1 {
-  margin: 100px 0;
+  margin: 120px 0 60px;
   max-width: 100%;
 }
 /* line 32, ../sass/_modern-less.scss */
