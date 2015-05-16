@@ -1,0 +1,21 @@
+Extra Symbol Alt Codes:
+
+To obtain an ALT Character:
+
+1. Make certain that the Num Lock key has been pressed to activate the numeric key section of the keyboard.
+2. Depress the Alt key.
+3. While the Alt key is depressed, type the proper sequence of numbers (on the numeric keypad) of the ALT code from the table above.
+4. Release the Alt key, and the character will appear. 
+
+
+Alt + 0164 = Crown1
+Alt + 0176 = Crown2
+Alt + 0133 = heart1
+Alt + 0134 = heart2
+Alt + 0135 = heart3
+Alt + 0185 = flower1
+Alt + 0178 = flower2
+Alt + 0179 = flower3
+Alt + 0188 = swirl1
+Alt + 0189 = swirl2
+Alt + 0190 = swirl3
