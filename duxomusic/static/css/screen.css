@@ -556,9 +556,14 @@ body #sb-site .newsletter-app article > section {
 body #sb-site .newsletter-app article h1 {
   font-size: 2em;
   font-weight: bold;
+  margin-top: 0;
+}
+/* line 36, ../sass/newsletter/_app.scss */
+body #sb-site .newsletter-app article h1:before {
+  margin-top: 0;
 }
 /* line 1, ../sass/title_divider/_title_divider.scss */
-body #sb-site h2.title-divider {
+body #sb-site .title-divider {
   font-family: "akaPotsley", "Mystery Quest", "Palatino Linotype", "Book Antiqua", Palatino, serif, cursive;
   font-size: 3em;
   font-weight: normal;
@@ -567,7 +572,7 @@ body #sb-site h2.title-divider {
   margin: 40px 0 20px;
 }
 /* line 9, ../sass/title_divider/_title_divider.scss */
-body #sb-site h2.title-divider:before, body #sb-site h2.title-divider:after {
+body #sb-site .title-divider:before, body #sb-site .title-divider:after {
   content: "";
   display: block;
   width: 10%;
