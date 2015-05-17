@@ -1,6 +1,9 @@
 __author__ = 'hadrien'
 from django.core.management.base import BaseCommand
 from django.utils import timezone
+from django.utils.translation import activate
+from django.conf import settings
+
 
 from newsletter.service import *
 
@@ -9,6 +12,8 @@ class Command(BaseCommand):
     help = 'Sends all the newsletters that are supposed to be sent'
 
     def handle(self, *args, **options):
+        activate(settings.LANGUAGE_CODE)
+
         newsletters = Mail.objects.filter(date_envoi__lte=timezone.now(), draft=False, sent=False)
 
         to_send = list()
