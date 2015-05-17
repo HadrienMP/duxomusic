@@ -44,7 +44,7 @@ class Mail(models.Model):
     """A mail that is sent to all or a subset of the subscribers of a list or lists"""
 
     sujet = models.CharField(max_length=255, unique=True)
-    corps = models.TextField()
+    corps = models.TextField(help_text=_("Utiliser {prenom} dans le texte pour insérer le prénom du destinataire"))
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)
     date_envoi = models.DateTimeField(default=timezone.now)
