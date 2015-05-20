@@ -1,10 +1,12 @@
 .biography {
-    height: 150px;
+
     img {
         float: left;
         @include border-radius(5px 0 0 5px);
+        margin: 0 20px 10px 0;
     }
     .description {
-        padding: 10px 20px 10px 170px;
+        margin: 0 20px;
+        padding: 5px 0;
     }
 }

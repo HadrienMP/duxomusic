@@ -18,4 +18,15 @@ $(function() {
             .css('margin-top', '0')
             .css('position', 'absolute');
     });
+
+    /* ######################################
+
+    Biography script
+
+    ###################################### */
+    $(".biography").hover(function(e) {
+        if ($(this).find('img').length > 1) {
+            $(this).find('img').toggle();
+        }
+    });
 });

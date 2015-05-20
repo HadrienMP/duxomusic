@@ -601,18 +601,16 @@ body #sb-site .sound .under-sound .meta {
   margin: 35px 0 15px;
   font-size: 0.9em;
 }
-/* line 1, ../sass/biography/_biography.scss */
-body #sb-site .biography {
-  height: 150px;
-}
 /* line 3, ../sass/biography/_biography.scss */
 body #sb-site .biography img {
   float: left;
   -moz-border-radius: 5px 0 0 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px 0 0 5px;
+  margin: 0 20px 10px 0;
 }
-/* line 7, ../sass/biography/_biography.scss */
+/* line 8, ../sass/biography/_biography.scss */
 body #sb-site .biography .description {
-  padding: 10px 20px 10px 170px;
+  margin: 0 20px;
+  padding: 5px 0;
 }

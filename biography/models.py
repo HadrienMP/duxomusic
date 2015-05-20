@@ -6,7 +6,7 @@ from colorfield.fields import ColorField
 
 
 class Biography(CMSPlugin):
-    photo = FilerImageField()
+    photo = FilerImageField(related_name="photo")
+    hover_photo = FilerImageField(related_name="hover_photo", blank=True, null=True)
     description = HTMLField()
-    header_color = ColorField(blank=True)
 
