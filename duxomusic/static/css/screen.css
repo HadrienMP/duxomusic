@@ -602,15 +602,23 @@ body #sb-site .sound .under-sound .meta {
   font-size: 0.9em;
 }
 /* line 3, ../sass/biography/_biography.scss */
-body #sb-site .biography img {
+body #sb-site .biography .img-wrapper {
+  height: 170px;
+  width: 170px;
   float: left;
+  position: relative;
+}
+/* line 9, ../sass/biography/_biography.scss */
+body #sb-site .biography img {
   -moz-border-radius: 5px 0 0 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px 0 0 5px;
-  margin: 0 20px 10px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-/* line 8, ../sass/biography/_biography.scss */
+/* line 15, ../sass/biography/_biography.scss */
 body #sb-site .biography .description {
   margin: 0 20px;
-  padding: 5px 0;
+  padding: 1px 0;
 }

@@ -1,12 +1,15 @@
 {% load thumbnail %}
 <section class="block biography">
-    {% thumbnail instance.photo 150x150 crop upscale as thumb %}
-    <img src="{{ thumb.url }}" alt="Photo de Dux'O"/>
 
-    {% if instance.hover_photo %}
-    {% thumbnail instance.hover_photo 150x150 crop upscale as hover_photo %}
-    <img src="{{ hover_photo.url }}" alt="Photo de Dux'O menaçant" style="display:none"/>
-    {% endif %}
+    <div class="img-wrapper">
+        {% thumbnail instance.photo 150x150 crop upscale as thumb %}
+        <img src="{{ thumb.url }}" alt="Photo de Dux'O"/>
+
+        {% if instance.hover_photo %}
+        {% thumbnail instance.hover_photo 150x150 crop upscale as hover_photo %}
+        <img src="{{ hover_photo.url }}" alt="Photo de Dux'O menaçant" style="display:none"/>
+        {% endif %}
+    </div>
 
     <div class="description">
         {{ instance.description | safe }}

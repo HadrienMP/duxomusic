@@ -1,12 +1,19 @@
 .biography {
 
-    img {
+    .img-wrapper {
+        height: 170px;
+        width: 170px;
         float: left;
+        position: relative;
+    }
+    img {
         @include border-radius(5px 0 0 5px);
-        margin: 0 20px 10px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     .description {
         margin: 0 20px;
-        padding: 5px 0;
+        padding: 1px 0;
     }
 }

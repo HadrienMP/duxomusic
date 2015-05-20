@@ -26,7 +26,8 @@ $(function() {
     ###################################### */
     $(".biography").hover(function(e) {
         if ($(this).find('img').length > 1) {
-            $(this).find('img').toggle();
+            $(this).find('img').stop();
+            $(this).find('img').fadeToggle(200);
         }
     });
 });
