@@ -603,7 +603,7 @@ body #sb-site .sound .under-sound .meta {
 }
 /* line 3, ../sass/biography/_biography.scss */
 body #sb-site .biography .img-wrapper {
-  height: 170px;
+  height: 150px;
   width: 170px;
   float: left;
   position: relative;
