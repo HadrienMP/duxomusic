@@ -19,7 +19,7 @@ class NewsletterForm(ModelForm):
 def csv_only(value):
     ext = os.path.splitext(value.name)[1]
     valid_extensions = ['.csv']
-    if ext not in valid_extensions or value.content_type != 'text/csv':
+    if ext not in valid_extensions or value.content_type not in ['text/csv', 'application/csv']:
         raise ValidationError(u'Type de fichier non autorisé. Les types acceptés sont : CSV')
 
 
