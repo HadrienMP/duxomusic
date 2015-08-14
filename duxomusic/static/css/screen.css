@@ -1,4 +1,4 @@
-/* line 5, ../../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../var/lib/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../usr/local/rvm/gems/ruby-2.1.5@rails4/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -584,18 +584,22 @@ body #sb-site .title-divider:before, body #sb-site .title-divider:after {
   -webkit-box-shadow: rgba(255, 255, 255, 0.9) 0 0 10px;
   box-shadow: rgba(255, 255, 255, 0.9) 0 0 10px;
 }
-/* line 2, ../sass/dux_news/_dux_news.scss */
+/* line 1, ../sass/dux_news/_dux_news.scss */
+body #sb-site .sound {
+  margin-bottom: 20px;
+}
+/* line 5, ../sass/dux_news/_dux_news.scss */
 body #sb-site .sound .under-sound {
   margin: 20px;
   margin-bottom: 0;
   padding-bottom: 20px;
 }
-/* line 7, ../sass/dux_news/_dux_news.scss */
+/* line 10, ../sass/dux_news/_dux_news.scss */
 body #sb-site .sound .under-sound .show-disqus {
   margin-top: 20px;
   display: block;
 }
-/* line 12, ../sass/dux_news/_dux_news.scss */
+/* line 15, ../sass/dux_news/_dux_news.scss */
 body #sb-site .sound .under-sound .meta {
   color: #aaa;
   margin: 35px 0 15px;
@@ -621,4 +625,51 @@ body #sb-site .biography img {
 body #sb-site .biography .description {
   margin: 0 20px;
   padding: 1px 0;
+}
+
+/* line 3, ../sass/_lockdown.scss */
+#lockdown h2 {
+  font-size: 2em;
+  text-transform: uppercase;
+}
+/* line 7, ../sass/_lockdown.scss */
+#lockdown h2:first-child {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  letter-spacing: 6px;
+}
+/* line 14, ../sass/_lockdown.scss */
+#lockdown .block p:first-child {
+  margin-top: 10px !important;
+}
+/* line 15, ../sass/_lockdown.scss */
+#lockdown .block.lock {
+  padding: 20px;
+  text-align: center;
+}
+/* line 20, ../sass/_lockdown.scss */
+#lockdown .countdown-value {
+  position: relative;
+  display: inline-block;
+  margin-right: 3px;
+}
+/* line 25, ../sass/_lockdown.scss */
+#lockdown .countdown-value:first-child {
+  margin-left: 5px;
+}
+/* line 29, ../sass/_lockdown.scss */
+#lockdown .countdown-value .value {
+  display: block;
+  text-align: center;
+  background: #0067d6;
+  padding: 25px;
+  font-weight: 400;
+}
+/* line 36, ../sass/_lockdown.scss */
+#lockdown .countdown-value .label {
+  display: block;
+  text-align: center;
+  font-weight: 300;
+  font-size: 0.6em;
+  margin-bottom: -10px;
 }
