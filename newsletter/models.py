@@ -58,11 +58,11 @@ class Mail(models.Model):
 
     def __unicode__(self):
         if self.sent:
-            definition = '"{0}" - Sent to {1} persons (around {2})'
+            definition = u'"{0}" - Sent to {1} persons (around {2})'
         else:
-            definition = '"{0}"'
+            definition = u'"{0}"'
             if self.draft:
-                definition += " - Brouillon"
+                definition += u" - Brouillon"
         return definition.format(self.sujet, len(self.recipients.all()),
                                  self.date_envoi.strftime('%H:%M the %d/%m/%Y'))
 
