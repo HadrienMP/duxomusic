@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import datetime
-
 from django.db import models, migrations
+import django.utils.timezone
 import uuidfield.fields
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
         ('cms', '0011_auto_20150419_1006'),
     ]
@@ -41,10 +41,10 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('sujet', models.CharField(unique=True, max_length=255)),
-                ('corps', models.TextField()),
+                ('corps', models.TextField(help_text="Use {prenom} in the text to insert the recipient's first name.")),
                 ('date_creation', models.DateTimeField(auto_now_add=True)),
                 ('date_modification', models.DateTimeField(auto_now=True)),
-                ('date_envoi', models.DateTimeField(default=datetime.datetime.now)),
+                ('date_envoi', models.DateTimeField(default=django.utils.timezone.now)),
                 ('draft', models.BooleanField(default=True)),
                 ('sent', models.BooleanField(default=False)),
                 ('list', models.ForeignKey(related_name='mails', to='newsletter.List')),
@@ -57,9 +57,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='NewsletterPluginModel',
             fields=[
-                ('cmsplugin_ptr',
-                 models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False,
-                                      to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
                 ('call_to_action', models.TextField(null=True, verbose_name=b'Call To Action', blank=True)),
                 ('list', models.ForeignKey(to='newsletter.List')),
             ],

@@ -7,21 +7,20 @@ import djangocms_text_ckeditor.fields
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ('filer', '0002_auto_20150510_1856'),
         ('cms', '0011_auto_20150419_1006'),
+        ('filer', '__first__'),
     ]
 
     operations = [
         migrations.CreateModel(
             name='Biography',
             fields=[
-                ('cmsplugin_ptr',
-                 models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False,
-                                      to='cms.CMSPlugin')),
-                ('title', models.CharField(max_length=125)),
-                ('biography', djangocms_text_ckeditor.fields.HTMLField()),
-                ('photo', filer.fields.image.FilerImageField(to='filer.Image')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
+                ('description', djangocms_text_ckeditor.fields.HTMLField()),
+                ('hover_photo', filer.fields.image.FilerImageField(related_name='hover_photo', blank=True, to='filer.Image', null=True)),
+                ('photo', filer.fields.image.FilerImageField(related_name='photo', to='filer.Image')),
             ],
             options={
                 'abstract': False,

@@ -137,22 +137,19 @@ INSTALLED_APPS = (
     # Colorfield
     'colorfield',
 
-    # Aldryn Bootstrap
-    'aldryn_bootstrap3',
-
     # Django robots
     'robots',
+    
+    # Aldryn bootstrap
+    'aldryn_bootstrap3',
 
     # Nephila blog
-    'cmsplugin_filer_image',
-    'parler',
     'taggit',
     'taggit_autosuggest',
     'django_select2',
     'meta',
     'meta_mixin',
     'admin_enhancer',
-    'djangocms_blog',
 
     # Custom
     'duxomusic',
@@ -218,9 +215,6 @@ DATABASES = {
 
 MIGRATION_MODULES = {
     'menus': 'menus.migrations_django',
-    'filer': 'filer.migrations_django',
-    'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
-    'aldryn_bootstrap3': 'aldryn_bootstrap3.migrations_django',
 }
 
 # Session for nm_msgs

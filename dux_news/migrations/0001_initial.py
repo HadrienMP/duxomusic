@@ -3,12 +3,14 @@ from __future__ import unicode_literals
 
 from django.db import models, migrations
 import django.utils.timezone
-
+import taggit_autosuggest.managers
 import djangocms_text_ckeditor.fields
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
+        ('taggit', '0001_initial'),
         ('cms', '0011_auto_20150419_1006'),
     ]
 
@@ -16,9 +18,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='NewSound',
             fields=[
-                ('cmsplugin_ptr',
-                 models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False,
-                                      to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin')),
             ],
             options={
                 'abstract': False,
@@ -37,6 +37,8 @@ class Migration(migrations.Migration):
                 ('draft', models.BooleanField(default=True)),
                 ('description', djangocms_text_ckeditor.fields.HTMLField(blank=True)),
                 ('title', models.CharField(max_length=125)),
+                ('slug', models.SlugField(unique=True)),
+                ('tags', taggit_autosuggest.managers.TaggableManager(to='taggit.Tag', through='taggit.TaggedItem', blank=True, help_text='A comma-separated list of tags.', verbose_name='Tags')),
             ],
             options={
             },
