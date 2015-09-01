@@ -59,5 +59,6 @@ target/
 
 .idea/
 *.db
+*.sqlite
 
 .sass-cache
