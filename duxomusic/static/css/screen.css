@@ -627,49 +627,19 @@ body #sb-site .biography .description {
   padding: 1px 0;
 }
 
-/* line 3, ../sass/_lockdown.scss */
-#lockdown h2 {
-  font-size: 2em;
-  text-transform: uppercase;
-}
-/* line 7, ../sass/_lockdown.scss */
-#lockdown h2:first-child {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  letter-spacing: 6px;
-}
-/* line 14, ../sass/_lockdown.scss */
-#lockdown .block p:first-child {
-  margin-top: 10px !important;
-}
-/* line 15, ../sass/_lockdown.scss */
-#lockdown .block.lock {
-  padding: 20px;
-  text-align: center;
-}
-/* line 20, ../sass/_lockdown.scss */
-#lockdown .countdown-value {
+/* line 215, ../sass/_modern-less.scss */
+.iframe-video-wrapper {
   position: relative;
-  display: inline-block;
-  margin-right: 3px;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
 }
-/* line 25, ../sass/_lockdown.scss */
-#lockdown .countdown-value:first-child {
-  margin-left: 5px;
-}
-/* line 29, ../sass/_lockdown.scss */
-#lockdown .countdown-value .value {
-  display: block;
-  text-align: center;
-  background: #0067d6;
-  padding: 25px;
-  font-weight: 400;
-}
-/* line 36, ../sass/_lockdown.scss */
-#lockdown .countdown-value .label {
-  display: block;
-  text-align: center;
-  font-weight: 300;
-  font-size: 0.6em;
-  margin-bottom: -10px;
+/* line 221, ../sass/_modern-less.scss */
+.iframe-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

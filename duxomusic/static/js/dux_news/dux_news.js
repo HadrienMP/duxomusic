@@ -14,9 +14,4 @@ $(function() {
         }
 
     });
-    
-    $('.block.sound iframe').each(function() {
-       $(this).height($(this).height() * $(this).parent().innerWidth() / $(this).width());
-       $(this).width($(this).parent().innerWidth() - 1);
-    });
 });
